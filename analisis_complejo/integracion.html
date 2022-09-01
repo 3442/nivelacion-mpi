@@ -1,0 +1,322 @@
+<!DOCTYPE HTML>
+<html lang="es" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Integración compleja - Nivelación en Matemáticas para Ingeniería</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../intro/intro.html"><strong aria-hidden="true">1.</strong> Introducción</a></li><li class="chapter-item expanded "><a href="../analisis_complejo/intro.html"><strong aria-hidden="true">2.</strong> Análisis complejo</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../analisis_complejo/conjuntos.html"><strong aria-hidden="true">2.1.</strong> Conjuntos, estructuras y el plano complejo</a></li><li class="chapter-item expanded "><a href="../analisis_complejo/funciones.html"><strong aria-hidden="true">2.2.</strong> Funciones de variable compleja</a></li><li class="chapter-item expanded "><a href="../analisis_complejo/derivacion.html"><strong aria-hidden="true">2.3.</strong> Derivación compleja</a></li><li class="chapter-item expanded "><a href="../analisis_complejo/series.html"><strong aria-hidden="true">2.4.</strong> Series complejas</a></li><li class="chapter-item expanded "><a href="../analisis_complejo/puntos.html"><strong aria-hidden="true">2.5.</strong> Singularidades, polos y ceros</a></li><li class="chapter-item expanded "><a href="../analisis_complejo/integracion.html" class="active"><strong aria-hidden="true">2.6.</strong> Integración compleja</a></li></ol></li><li class="chapter-item expanded "><a href="../fourier/intro.html"><strong aria-hidden="true">3.</strong> Análisis de Fourier</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../fourier/ortogonalidad.html"><strong aria-hidden="true">3.1.</strong> Ortogonalidad</a></li><li class="chapter-item expanded "><a href="../fourier/series.html"><strong aria-hidden="true">3.2.</strong> Series de Fourier</a></li><li class="chapter-item expanded "><a href="../fourier/transformada.html"><strong aria-hidden="true">3.3.</strong> Transformada de Fourier</a></li><li class="chapter-item expanded "><a href="../fourier/lti.html"><strong aria-hidden="true">3.4.</strong> Sistemas LTI</a></li></ol></li><li class="chapter-item expanded "><a href="../laplace/intro.html"><strong aria-hidden="true">4.</strong> Transformada de Laplace</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../laplace/bilateral.html"><strong aria-hidden="true">4.1.</strong> Transformada bilateral de Laplace</a></li><li class="chapter-item expanded "><a href="../laplace/unilateral.html"><strong aria-hidden="true">4.2.</strong> Transformada unilateral de Laplace</a></li><li class="chapter-item expanded "><a href="../laplace/aplicaciones.html"><strong aria-hidden="true">4.3.</strong> Aplicación de las transformadas integrales</a></li></ol></li><li class="chapter-item expanded "><a href="../z/intro.html"><strong aria-hidden="true">5.</strong> Transformada z</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../z/funciones.html"><strong aria-hidden="true">5.1.</strong> Funciones en tiempo discreto</a></li><li class="chapter-item expanded "><a href="../z/sistemas.html"><strong aria-hidden="true">5.2.</strong> Sistemas en tiempo discreto</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Nivelación en Matemáticas para Ingeniería</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="integración-compleja"><a class="header" href="#integración-compleja">Integración compleja</a></h1>
+<blockquote>
+<p>Residues arise […] naturally in several branches of analysis […]. Their
+consideration provides simple and easy-to-use methods, which are applicable
+to a large number of diverse questions, and some new results […].</p>
+<p>— Augustin-Louis Cauchy, Sur un nouveau genre de calcul, 1826.</p>
+</blockquote>
+<p>Como no existe un ordenamiento de los complejos (no puede responderse si \(z_1
+&gt; z_2\) en el caso general), no podemos hablar de integrales definidas a como
+se tratan en análisis real:
+\[\int_a^b{f(x)\mathrm{d}x} = F(b) - F(a); \frac{\mathrm{d}}{\mathrm{d}x}F(x) = f(x)\]</p>
+<p>En su lugar, para integrar desde un complejo \(a\) a un complejo \(b\),
+debemos además definir una <strong>trayectoria de integración</strong> \(C\) de entre
+muchas posibles. A las integrales resultantes les denominamos <strong>de contorno</strong> o
+<strong>de línea</strong>:
+\[\begin{align*}\int_C{f(z)\mathrm{d}z} &amp;= \int_C{(u(x, y) + jv(x, y))(\mathrm{d}x + \mathrm{d}y)} \\ &amp;= \int_C{(u(x, y)\mathrm{d}x - v(x, y)\mathrm{d}y)} + j\int_C{(v(x, y)\mathrm{d}x + u(x, y)\mathrm{d}y)} \\ &amp;= F(b) - F(a)\end{align*}\]</p>
+<p><img src="img/segmentos.png" alt="" /></p>
+<p>Esta última equivalencia en términos de antiderivadas es el <strong>teorema
+fundamental para integrales de línea</strong> y solo sirve si \(f(z)\) es analítica
+en todo el plano. Si \(C\) es una curva cerrada que no se interseca a sí
+misma—como por ejemplo una circunferencia—utilizamos una notación
+especial para la integral de contorno:
+\[\oint_C{f(z)\mathrm{d}z}\]</p>
+<h2 id="teorema-de-la-integral-de-cauchy"><a class="header" href="#teorema-de-la-integral-de-cauchy">Teorema de la integral de Cauchy</a></h2>
+<p>Este es un caso particular del teorema fundamental para integrales de línea en
+el caso de contornos cerrados. Si \(a\) es un punto en la curva cerrada y
+simple \(C\) y además \(f(z)\) es analítica en tanto \(C\) como su
+interior, puede decirse que la curva inicia y termina en el mismo punto
+\(a\), por lo cual:
+\[\oint_C{f(z)\mathrm{d}z} = F(a) - F(a) = 0\]</p>
+<p>Las implicaciones de este teorema son profundas, al punto de que también se le
+conoce como <strong>teorema fundamental de la integración compleja</strong>. Algunas de ellas
+son:</p>
+<ul>
+<li>
+<p>Si una función compleja es diferenciable, necesariamente también es
+integrable. Esto puede entenderse como una consecuencia indirecta de que las
+funciones diferenciables sean holomorfas, pues cada una de las infinitas
+derivadas debe poseer su integral en la dirección contraria.</p>
+</li>
+<li>
+<p>Las restricciones de la condición de holomorfismo son tan fuertes que, sin
+importar la escogencia de la función \(f(z)\) y la curva \(C\), la
+integral de contorno será cero siempre que la función no tenga singularidades
+sobre o dentro de \(C\).</p>
+</li>
+<li>
+<p>El valor de una integral compleja de contorno cerrado depende solamente de
+los polos encerrados por el contorno. Esto quiere decir que:
+\[\oint_{C}{f(z)\mathrm{d}z} = \sum_{n}{\oint_{C_{pn}}{f(z)\mathrm{d}z}}\]</p>
+<p>Donde \(C_{pn}\) es algún contorno cerrado—posiblemente un
+subcontorno de \(C\)—que solo contiene al polo \(n\) de \(f(z)\).
+La suma de integrales cubre solo los polos encerrados por \(C\).</p>
+<p><img src="img/linealidadcauchy.png" alt="" /></p>
+</li>
+</ul>
+<h2 id="fórmula-de-la-integral-de-cauchy"><a class="header" href="#fórmula-de-la-integral-de-cauchy">Fórmula de la integral de Cauchy</a></h2>
+<p>Esta relación permite encontrar \(f(z_0)\) o cualquiera de sus derivadas,
+asumiendo que la imagen está definida y que \(z_0\) es parte del interior de \(C\).
+\[f^{(n)}(z_0) = \frac{n!}{2\pi j}\oint_{C}{\frac{f(z)}{(z - z_0)^{n + 1}}\mathrm{d}z}\]</p>
+<p>En particular, cuando \(n = 0\),
+\[f(z_0) = \frac{1}{2\pi j}\oint_{C}{\frac{f(z)}{z - z_0}\mathrm{d}z}\]</p>
+<p>Lo cual lleva a un método para el cálculo de integrales de contorno alrededor
+de un polo \(z_0\):
+\[\oint_{C}{\frac{f(z)}{z - z_0}\mathrm{d}z} = 2\pi j\cdot f(z_0)\]</p>
+<h2 id="teorema-del-residuo"><a class="header" href="#teorema-del-residuo">Teorema del residuo</a></h2>
+<p>El <strong>teorema del residuo</strong> es, de los tres, el resultado más general para
+la evaluación de integrales de contorno. Lee:
+\[\oint{f(z)\mathrm{d}z} = 2\pi j\sum_{i = 1}^{n}{c_{-1}^{(i)}}\]</p>
+<p>Es decir, la suma de los residuos asociados a todos los polos dentro de la
+región de integración.</p>
+<ul>
+<li>
+<p>Esto quiere decir que si una expansión en serie de Laurent tiene un residuo
+distinto de cero, entonces el centro de la serie es un polo.  Esto coincide
+con lo que ya conocemos, puesto que si \(c_{-1}\) es distinto de cero
+entonces el centro \(z_0\) es un polo de al menos primer orden.</p>
+</li>
+<li>
+<p>Junto a la fórmula de la integral de Cauchy, permite relacionar el valor de
+\(f(z_0)\) con el residuo de \(\frac{f(z)}{z - z_0}\) para una expansión
+centrada en \(z_0\). Es decir, este teorema ayuda a &quot;agregar polos&quot;..</p>
+</li>
+</ul>
+<h2 id="parametrizaciones"><a class="header" href="#parametrizaciones">Parametrizaciones</a></h2>
+<p>Frecuentemente encontraremos patrones regulares que permiten simplificar nuestras
+integrales. Algunos de ellos son:</p>
+<ul>
+<li>
+<p>Arcos con centro en el origen: En estos casos podemos realizar la sustitución
+\(z = e^{j\theta} = \cos(\theta) + j\sin(\theta)\), lo cual nos permite
+reducir la variable de integración a una variable real angular.</p>
+<p><img src="img/paramarco.png" alt="" /></p>
+</li>
+<li>
+<p>Líneas horizontales o verticales: En estos casos encontraremos que alguno de
+\(\mathrm{d}x\) o \(\mathrm{d}y\) es cero. Nuevamente se reduce el
+problema a integrandos complejos con variables de integración reales.</p>
+<p><img src="img/paramrecta.png" alt="" /></p>
+</li>
+</ul>
+<h2 id="evaluación-de-integrales-reales"><a class="header" href="#evaluación-de-integrales-reales">Evaluación de integrales reales</a></h2>
+<p>Las integrales complejas de contorno simplifican el cálculo de algunos tipos de
+integrales reales a través del uso de estos poderosos teoremas.</p>
+<h3 id="integrales-impropias-sobre-todos-los-reales"><a class="header" href="#integrales-impropias-sobre-todos-los-reales">Integrales impropias sobre todos los reales</a></h3>
+<p>Dada alguna función real \(f(x)\) se tiene por continuación analítica que
+\[\int_{-\infty}^{\infty}{f(x)\mathrm{d}x} = \oint_D{f(z)\mathrm{d}z}\]</p>
+<p>Bajo la condición de que \(\lim{z \to \infty}{z f(z)} = 0\). \(D\) es el
+contorno que se muestra a continuación, donde el radio \(R\) tiende a
+infinito:</p>
+<p><img src="img/impropia.png" alt="" /></p>
+<h3 id="integrales-de-funciones-trigonométricas"><a class="header" href="#integrales-de-funciones-trigonométricas">Integrales de funciones trigonométricas</a></h3>
+<p>Si \(G(\sin(\theta), \cos(\theta))\) es racional y real, entonces
+\[\int_0^{2\pi}{G(\sin(\theta), \cos(\theta))\mathrm{d}\theta} = \oint_D{f(z)\mathrm{d}z}\]</p>
+<p>Donde \(D\) es la circunferencia unitaria \(|z| = 1\) en dirección
+positiva. Puede demostrarse que las sustituciones respectivas son:
+\[\begin{align*}z &amp;= e^{j\theta} \\ \mathrm{d}\theta &amp;= \frac{\mathrm{d}z}{jz} \\ \sin(\theta) &amp;= \frac{1}{2j}\left(z - \frac{1}{z}\right) \\ \cos(\theta) &amp;= \frac{1}{2}\left(z + \frac{1}{z}\right) \end{align*}\]</p>
+<h1 id="ejemplo"><a class="header" href="#ejemplo">Ejemplo</a></h1>
+<p>\[\begin{align*}
+&amp;\int_0^{2\pi}{\frac{1}{2 + \cos(\theta)}\mathrm{d}\theta} \\
+=&amp; \oint_C{\frac{1}{jz\left(2 + \frac{1}{2}\left(z + \frac{1}{z}\right)\right)}\mathrm{d}z}; C: |z| = 1 \\
+=&amp; \frac{2}{j}\oint_C{\frac{1}{4z + z^2 + 1}\mathrm{d}z} \\
+=&amp; \frac{2}{j}\oint_C{\frac{1}{(z - (-2 - \sqrt{3}))(z - (-2 + \sqrt{3}))}\mathrm{d}z} \\
+=&amp; \frac{2}{j}\oint_C{\frac{1 / (z - (-2 - \sqrt{3}))}{z - (-2 + \sqrt{3})}\mathrm{d}z} \\
+=&amp; \frac{2}{j}\left(2\pi j\cdot\frac{1}{(-2 + \sqrt{3}) - (-2 - \sqrt{3})}\right) \\
+=&amp; \frac{2\pi\sqrt{3}}{3}
+\end{align*}\]</p>
+<p><img src="img/sqrt3.png" alt="" /></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../analisis_complejo/puntos.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../fourier/intro.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../analisis_complejo/puntos.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../fourier/intro.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

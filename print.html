@@ -1,0 +1,1637 @@
+<!DOCTYPE HTML>
+<html lang="es" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Nivelación en Matemáticas para Ingeniería</title>
+        <meta name="robots" content="noindex" />
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="intro/intro.html"><strong aria-hidden="true">1.</strong> Introducción</a></li><li class="chapter-item expanded "><a href="analisis_complejo/intro.html"><strong aria-hidden="true">2.</strong> Análisis complejo</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="analisis_complejo/conjuntos.html"><strong aria-hidden="true">2.1.</strong> Conjuntos, estructuras y el plano complejo</a></li><li class="chapter-item expanded "><a href="analisis_complejo/funciones.html"><strong aria-hidden="true">2.2.</strong> Funciones de variable compleja</a></li><li class="chapter-item expanded "><a href="analisis_complejo/derivacion.html"><strong aria-hidden="true">2.3.</strong> Derivación compleja</a></li><li class="chapter-item expanded "><a href="analisis_complejo/series.html"><strong aria-hidden="true">2.4.</strong> Series complejas</a></li><li class="chapter-item expanded "><a href="analisis_complejo/puntos.html"><strong aria-hidden="true">2.5.</strong> Singularidades, polos y ceros</a></li><li class="chapter-item expanded "><a href="analisis_complejo/integracion.html"><strong aria-hidden="true">2.6.</strong> Integración compleja</a></li></ol></li><li class="chapter-item expanded "><a href="fourier/intro.html"><strong aria-hidden="true">3.</strong> Análisis de Fourier</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="fourier/ortogonalidad.html"><strong aria-hidden="true">3.1.</strong> Ortogonalidad</a></li><li class="chapter-item expanded "><a href="fourier/series.html"><strong aria-hidden="true">3.2.</strong> Series de Fourier</a></li><li class="chapter-item expanded "><a href="fourier/transformada.html"><strong aria-hidden="true">3.3.</strong> Transformada de Fourier</a></li><li class="chapter-item expanded "><a href="fourier/lti.html"><strong aria-hidden="true">3.4.</strong> Sistemas LTI</a></li></ol></li><li class="chapter-item expanded "><a href="laplace/intro.html"><strong aria-hidden="true">4.</strong> Transformada de Laplace</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="laplace/bilateral.html"><strong aria-hidden="true">4.1.</strong> Transformada bilateral de Laplace</a></li><li class="chapter-item expanded "><a href="laplace/unilateral.html"><strong aria-hidden="true">4.2.</strong> Transformada unilateral de Laplace</a></li><li class="chapter-item expanded "><a href="laplace/aplicaciones.html"><strong aria-hidden="true">4.3.</strong> Aplicación de las transformadas integrales</a></li></ol></li><li class="chapter-item expanded "><a href="z/intro.html"><strong aria-hidden="true">5.</strong> Transformada z</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="z/funciones.html"><strong aria-hidden="true">5.1.</strong> Funciones en tiempo discreto</a></li><li class="chapter-item expanded "><a href="z/sistemas.html"><strong aria-hidden="true">5.2.</strong> Sistemas en tiempo discreto</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Nivelación en Matemáticas para Ingeniería</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="créditos"><a class="header" href="#créditos">Créditos</a></h1>
+<p>Autor: Alejandro Soto</p>
+<p>La gran mayoría de este resumen está basado en material elaborado por Pablo
+Alvarado para uso en EL4703 Señales y Sistemas.</p>
+<h1 id="introducción"><a class="header" href="#introducción">Introducción</a></h1>
+<p>Muchas herremientas matemáticas son indispensables en el estudio, diseño e
+implementación de sistemas en ingeniería. Este curso introduce algunas de
+ellas.</p>
+<h2 id="señales"><a class="header" href="#señales">Señales</a></h2>
+<p>Una <strong>señal</strong> es una función que contiene información.
+<img src="intro/img/caracteristicas.png" alt="" /></p>
+<ul>
+<li>
+<p>Número de variables: ¿De cuántos estados mutuamente independientes depende la señal?</p>
+</li>
+<li>
+<p>Dimensionalidad: ¿Cuántas escalas distintas expresa el valor de la señal?</p>
+</li>
+<li>
+<p>Discreto o continuo: ¿La cantidad de valores válidos entre cualesquiera otros
+dos valores válidos distintos es siempre infinita?</p>
+</li>
+<li>
+<p>Determinismo: ¿Puedo predicir la señal dada su historia?</p>
+</li>
+</ul>
+<h2 id="sistemas"><a class="header" href="#sistemas">Sistemas</a></h2>
+<p>Un <strong>sistema</strong> es aquello que transforma una señal en otra. Se dice entonces
+que un sistema tiene una señal de entrada y una señal de salida. Se representan
+típicamente por medio de diagramas de bloques:
+<img src="intro/img/bloques.png" alt="" /></p>
+<h2 id="modelos"><a class="header" href="#modelos">Modelos</a></h2>
+<p>Los <strong>modelos</strong> son descripciones formales de sistemas. Por ejemplo, en este
+curso estudiamos modelos matemáticos para sistemas que involucran señales de
+variable y valor continuo o discreto.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="análisis-complejo"><a class="header" href="#análisis-complejo">Análisis complejo</a></h1>
+<p>Esta unidad introduce al manejo de los complejos \(\mathbb{C}\) como
+principio sobre el que se construirán otras abstracciones a futuro.</p>
+<h2 id="por-qué-usamos-los-números-complejos"><a class="header" href="#por-qué-usamos-los-números-complejos">¿Por qué usamos los números complejos?</a></h2>
+<ul>
+<li>
+<p>Veremos que las operaciones aritméticas sobre \(\mathbb{C}\) son
+<strong>cerradas</strong>, lo cual le atribuye muchas propiedades y simetrías
+convenientes que no ocurren en \(\mathbb{R}\).</p>
+</li>
+<li>
+<p>Los complejos permiten codificar información de fase, por lo que son capaces
+de expresar tanto lo que ocurre ahora como lo que ya ocurrió y lo que luego
+ocurrirá cuando eso tiene sentido (eg. fasores). Esta noción de tiempo puede
+explotarse de maneras convenientes. Por ejemplo, las coordenadas
+rectangulares que identifican los píxeles dentro de una imagen pueden
+considerarse una variable temporal para fines de análisis frecuencial.</p>
+</li>
+<li>
+<p>La geometría y trigonometría en los complejos se vuelve un problema más
+aritmético y de evaluación numérica que de álgebra e identidades, sin perder
+nunca su propósito geométrico. Esto está muy relacionado al punto anterior.</p>
+</li>
+<li>
+<p>La integración de contorno cerrada y la derivación compleja son prácticamente
+la misma operación bajo ciertas condiciones.</p>
+</li>
+<li>
+<p>Por continuación analítica, muchas operaciones en los complejos tienen el
+mismo desarrollo que en los reales, así que el conocimiento existente para
+\(\mathbb{R}\) sigue siendo útil.</p>
+</li>
+</ul>
+<p>En otras palabras, usamos los complejos porque son una herramienta matemática
+más simple y elegante para especificar ciertos tipos de problemas.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="conjuntos-estructuras-y-el-plano-complejo"><a class="header" href="#conjuntos-estructuras-y-el-plano-complejo">Conjuntos, estructuras y el plano complejo</a></h1>
+<p>Se necesitan algunos conceptos previos:</p>
+<ul>
+<li>
+<p>Conjunto: Difícil de definir formalmente sin crear paradojas, vamos a usar la
+noción intuitiva.
+<img src="analisis_complejo/img/venn.png" alt="" /></p>
+</li>
+<li>
+<p>Estructura algebraica: Un conjunto asociado a una operación sobre elementos
+de ese conjunto. Por ejemplo, los reales \(\mathbb{R}\) junto a la
+operación de negación \(-x\) conforman una estructura de operación unaria.</p>
+</li>
+<li>
+<p>Nos interesan las estructuras algebraicas con operaciones binarias.</p>
+</li>
+</ul>
+<p><img src="analisis_complejo/img/estructuras.png" alt="" />
+<img src="analisis_complejo/img/binaria.png" alt="" /></p>
+<h2 id="el-conjunto-mathbbc"><a class="header" href="#el-conjunto-mathbbc">El conjunto \(\mathbb{C}\)</a></h2>
+<p>Se define a través la unidad imaginaria \(j\) que cumple \(j^2 = -1\).
+\[z = a + jb = re^{j(\theta + 2k\pi)} = r\cos(\theta) + jr\sin(\theta); k \in \mathbb{Z}\]</p>
+<p>Podemos definir muchos constructos en el plano utilizando ecuaciones
+e inecuaciones en términos de la variable \(z = x + jy\).</p>
+<ul>
+<li>
+<p>Puntos: Decimos \(z_0 = 1 - j2\) para referirnos al punto cartesiano
+\((1, -2)\). A los ejes les llamamos eje real y eje imaginario.</p>
+</li>
+<li>
+<p>Distancias y corrimientos: La distancia entre dos puntos \(a\) y \(b\) es
+\(|a - b|\).</p>
+</li>
+<li>
+<p>Rectas paralelas a los ejes: En los reales esto corresponde a las
+ecuaciones \(x = c\) y \(y = c\), por lo que en los complejos
+decimos \(\mathrm{Re}\{z\} = c\) e \(\mathrm{Im}\{z\} = c\).</p>
+</li>
+<li>
+<p>Semirrectas: Como los números complejos pueden expresarse en
+forma de magnitud y ángulo, podemos construir &quot;rayos&quot; que provienen
+del origen con ecuaciones como \(\angle z = \theta\).</p>
+</li>
+<li>
+<p>Rectas: Todos los puntos de una recta cumplen estar a la misma distancia
+de tanto un punto \(a\) como un punto \(b\), por lo que es posible
+escribir una recta como \(|z - a| = |z - b|\).</p>
+</li>
+</ul>
+<p><img src="analisis_complejo/img/mediatriz.png" alt="" /></p>
+<ul>
+<li>Círculos: Sabemos que \(|z|^2 = x^2 + y^2 = r^2\), por lo que una
+circunferencia centrada en el origen está expresada por \(|z| = r\). Si
+&quot;desfasamos&quot; \(z\) es posible mover el origen. Por ejemplo, \(|z - (3 +
+j5)| \lt 2\) es el interior de un círculo centrado en \(z_0 = 3 + j5\) y
+con un radio de \(2\).</li>
+</ul>
+<p><img src="analisis_complejo/img/desigualdades.png" alt="" /></p>
+<h3 id="conjugación"><a class="header" href="#conjugación">Conjugación</a></h3>
+<p>Si \(z = a + jb = re^{j\theta}\), su conjugado es \(z^* = a - jb =
+re^{-j\theta}\).  En otras palabras, invierte el signo del ángulo, lo cual
+crea un &quot;espejo&quot; alrededor del eje real.</p>
+<p><img src="analisis_complejo/img/conjugado.png" alt="" /></p>
+<p>La conjugación tiene dos propiedades de cancelación:
+\[z + z^* = 2\mathrm{Re}\{z\}\]
+\[z - z^* = j2\mathrm{Im}\{z\}\]</p>
+<h3 id="multiplicación-y-división"><a class="header" href="#multiplicación-y-división">Multiplicación y división</a></h3>
+<p>Para multiplicar en forma rectangular, tenemos que:
+\[(a + jb)(c + jd) = (ac - bd) + j(ad + jbc)\]
+Pero es más fácil si lo hacemos en forma polar, ya que:
+\[r_1e^{j\theta_1}\cdot r_2e^{j\theta_2} = r_1r_2e^{j(\theta_1 + \theta_2)}\]
+Para dividir en forma rectangular es necesario utilizar el conjugado:
+\[\frac{a + jb}{c + jd} = \frac{a + jb}{c + jd}\cdot\frac{c - jd}{c - jd} = \frac{(a + jb)(c - jd)}{c^2 + d^2} = \frac{z_1z_2^*}{|z_2|^2}\]
+Esto nos muestra da una importante propiedad del conjugado:
+\[zz^* = |z|^2\]
+Dividir también es más fácil en forma polar:
+\[\frac{r_1e^{j\theta_1}}{r_2e^{j\theta_2}} = \frac{r_1}{r_2}e^{j(\theta_1 - \theta_2)}\]</p>
+<h3 id="raíces-complejas"><a class="header" href="#raíces-complejas">Raíces complejas</a></h3>
+<p>Sea \(z = re^{j(\theta + 2k\pi)}\), entonces \(w =
+\sqrt[n]{r}e^{\frac{j}{n}(\theta + 2k\pi)}\) es una raíz enésima de \(z\).
+La redundancia polar se vuelve importante aquí, ya que \(k\) evaluado desde
+\(0\) hasta \(n - 1\) produce \(n\) distintas raíces, acomodadas
+geométricamente por un cambio constante de rotación. Todos los complejos
+distintos de cero (incluyendo a los reales, que también son complejos) tienen
+exactamente \(n\) raíces enésimas distintas.</p>
+<p><img src="analisis_complejo/img/raices.png" alt="" /></p>
+<h3 id="potencias-y-logaritmos"><a class="header" href="#potencias-y-logaritmos">Potencias y logaritmos</a></h3>
+<p>El logaritmo complejo se puede deducir fácilmente a partir de la forma polar:
+\[\ln\left(re^{j(\theta + 2k\pi)}\right) = \ln(r) + \ln\left(e^{j(\theta + 2k\pi)}\right) = \ln(r) + j(\theta + 2k\pi)\]
+Así que en los complejos existen muchos logaritmos para un mismo número, no solo uno. Típicamente se habla del logaritmo principal (se identifica por la mayúscula),
+\[\mathrm{Ln}(z) = \ln_{k = 0}(z)\]
+Debido a argumentos parecidos tenemos que
+\[z^w = e^{\ln{z^w}} = e^{w\ln{z}}\]
+Por lo que la exponenciación también tiene una rama principal e infinitas adicionales por redundancia polar.</p>
+<h3 id="funciones-circulares"><a class="header" href="#funciones-circulares">Funciones circulares</a></h3>
+<p>Recordando la fórmula de Euler, \(e^{j\theta} = \cos(\theta) + j\sin(\theta)\),
+podemos extender las funciones seno y coseno a argumentos complejos:
+\[\cos(z) = \frac{e^{jz} + e^{-jz}}{2}\]
+\[\sin(z) = \frac{e^{jz} - e^{-jz}}{j2}\]
+En este mismo estilo, podemos definir nuevas funciones análogas, llamadas
+funciones hiperbólicas, como las partes par e impar de la función exponencial:
+\[\cosh(z) = \frac{e^{z} + e^{-z}}{2} = \cos(jz)\]
+\[\sinh(z) = \frac{e^{z} - e^{-z}}{2} = -j\sin(jz)\]</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="funciones-de-variable-compleja"><a class="header" href="#funciones-de-variable-compleja">Funciones de variable compleja</a></h1>
+<p>A diferencia de las funciones de variable real, las funciones \(f : \mathbb{C}
+\to \mathbb{C}\) de variable compleja pueden siempre descomponerse tanto en
+sus argumentos como en sus imágenes:
+\[w = f(z) = f(x + jy) = u(x + jy) + jv(x + jy) = r(x + jy)e^{j\theta(x + jy)}\]
+Donde \(u, v, r, \theta : \mathbb{C} \to \mathbb{R}\). </p>
+<p><img src="analisis_complejo/img/rtuv.png" alt="" /></p>
+<p>Esta idea nos permite transformar o <strong>mapear</strong> figuras en el plano \(z = x +
+jy\) de Argand al plano \(w = u + jv\) de Argand utilizando la función de
+mapeo \(w = f(z)\). Por ejemplo, consideremos el mapeo \(w = 2z + 6\)
+aplicado a la recta \(y = 2x + 4\).</p>
+<p><img src="analisis_complejo/img/w=2z+6.png" alt="" /></p>
+<p>Es posible que un punto no cambie al aplicarse un mapeo, tal que \(z = f(z)\),
+caso bajo el cual se llama <strong>punto fijo</strong>.</p>
+<h2 id="mapeos-lineales"><a class="header" href="#mapeos-lineales">Mapeos lineales</a></h2>
+<p>Se les llama lineales a los mapeos de la forma
+\[w = \alpha z + \beta = |\alpha||z|e^{j(\angle\alpha + \angle z)} + \beta\]
+Ddonde \(\alpha\) y \(\beta\) son constantes complejasarbitrarios. Nótese que
+la segunda forma en la que se ha escrito esto describe las tres operaciones que un
+mapeo lineal es capaz de realizar:</p>
+<ul>
+<li>
+<p>Escalamiento: La magnitud de \(z\) se multiplica con la magnitud de
+\(\alpha\).  Esto es equivalente a &quot;subir la escala&quot;; es decir, agrandar o
+reducir las formas geométricas.</p>
+</li>
+<li>
+<p>Rotación: Al ángulo de todo punto \(z\) se le agrega \(\angle \alpha\).
+Es decir, se rota el plano entero. Recordar que las rotaciones antihorarias
+son positivas y las horarias son negativas.</p>
+</li>
+<li>
+<p>Traslación: Luego de las dos operaciones anteriores (el orden de operaciones
+es importante) se agrega un offset \(\beta\) a todos los puntos.</p>
+</li>
+</ul>
+<p><img src="analisis_complejo/img/w=alphaz.png" alt="" /></p>
+<p>Puede entenderse a un mapeo lineal como un mapeo de escalamiento y rotación
+seguido de un mapeo de traslación. El mapeo que vimos anteriormente es
+un mapeo lineal. Otro ejemplo es el siguiente:</p>
+<p><img src="analisis_complejo/img/ejlineal.png" alt="" /></p>
+<h2 id="mapeos-de-inversión"><a class="header" href="#mapeos-de-inversión">Mapeos de inversión</a></h2>
+<p>Otro tipo común de mapeo es el mapeo de inversión, dado por
+\[w = \frac{1}{z} = \frac{1}{r}e^{-j\theta}\]
+La interpretación geométrica de este mapeo es un poco menos
+evidente. Nótense primeramente los casos extremos de magnitud
+para \(z\):</p>
+<ul>
+<li>Si \(|z| \to 0\), entonces \(|w| \to \infty\).</li>
+<li>Si \(|z| \to \infty\), entonces \(|w| \to 0\).</li>
+</ul>
+<p>Esto tiene varias consecuencias en las figuras que se mapean,
+ya que algunas de ellas contendrán a estos casos particulares
+y otras no:</p>
+<ul>
+<li>
+<p>Una circunferencia que no incluye al origen se mantiene siendo
+una circunferencia bajo un mapeo de inversión. Su radio se invierte
+y la circunferencia se refleja con respecto al eje real.</p>
+</li>
+<li>
+<p>Una circunferencia que incluye al origen se vuelve una recta. Entonces,
+se puede entender a una recta como una circunferencia de radio infinito.</p>
+</li>
+<li>
+<p>Toda recta &quot;incluye&quot; al infinito, por lo que cualquier recta mapeada
+producirá un punto en el origen. La figura será una recta si la recta
+original pasa por el origen, o una circunferencia con vértice en el origen en
+caso contrario.</p>
+</li>
+<li>
+<p>Las rectas paralelas a los ejes mantienen el comportamiento intuitivo.</p>
+</li>
+</ul>
+<p><img src="analisis_complejo/img/inversion.png" alt="" /></p>
+<h2 id="otros-mapeos"><a class="header" href="#otros-mapeos">Otros mapeos</a></h2>
+<p>Los mapeos bilineales son el cociente de dos mapeos lineales,
+\[w = \frac{az + b}{cz + d} = \lambda + \frac{\mu}{\alpha z + \beta}\]
+Donde \(\lambda = \frac{a}{c}\), \(\mu = bc - ad\), \(\alpha = c^2\)
+y \(\beta = cd\). Nótese que en esta segunda forma se observa más claramente
+qeu un mapeo bilineal no es más que un mapeo lineal seguido de un mapeo de
+inversión y finalmente otro mapeo lineal.</p>
+<p>Hay muchos otros tipos de mapeos, pero ya se han cubierto los más relevantes.
+<img src="analisis_complejo/img/otrosmapeos.png" alt="" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="derivación-compleja"><a class="header" href="#derivación-compleja">Derivación compleja</a></h1>
+<p>En las funciones de variable real se habla de límites laterales por la
+izquierda y por la derecha. Se dice que un límite está definido solo si estos
+dos límites laterales existen y además concuerdan. Como las derivadas no son
+más que límites con una forma particular, una derivada existe solo si existen
+las derivadas por la izquierda y por la derecha y ambas concuerdan.</p>
+<p>El concepto de límite se puede extender a los complejos, pero con una
+complicación adicional: existen infinitas direcciones por las cuales tomar el
+límite, en vez de solo dos, y todas ellas deben existir y concordar para que la
+derivada compleja exista. Esta misma situación ocurre para continuidad en una
+función de variable compleja, ya que una función \(f(z)\) es continua en 
+\(z = z_0\) si y solo si:
+\[f(z_0) = \lim_{z\to z_0}{f(z)}\]</p>
+<p>Intuitivamente, podemos entonces decir que continuidad y derivabilidad son
+propiedades mucho más fuertes en los complejos que en los reales, en el sentido
+de que son más difíciles de alcanzar. El poder decir que una función de
+variable compleja es derivable abre la puerta a muchas simplicacioones y
+garantías acerca de la función.</p>
+<p><img src="analisis_complejo/img/limite.png" alt="" /></p>
+<p>Estas implicaciones son tan amplias que existen varios términos para llamar a
+una función derivable en una región. Aunque no exactamente idénticos, de
+momento los trataremos como si lo fueran.</p>
+<ul>
+<li><strong>Diferenciable</strong>: La función es continua y su derivada existe congruentemente desde infinitas direcciones.</li>
+<li><strong>Holomorfa</strong>: La función es infinitamente diferenciable. Nótese que esto implica que si una función puede derivarse una vez, necesariamente puede seguirse derivando cuantas veces se quiera.</li>
+<li><strong>Analítica</strong>: La función puede expandirse en una serie de potencias convergente (por ejemplo, de Taylor).</li>
+</ul>
+<p>Esa tripleta de propiedades prácticamente equivalentes es uno de los resultados
+más centrales e importantes del análisis complejo. Es el fundamento de todo lo
+que sigue en esta unidad.</p>
+<h2 id="y-cómo-se-deriva-una-función-de-variable-compleja"><a class="header" href="#y-cómo-se-deriva-una-función-de-variable-compleja">¿Y cómo se deriva una función de variable compleja?</a></h2>
+<p>Para nuestros intereses, se deriva exactamente igual que si la función fuese de
+variable real. Aplican las mismas reglas y teoremas. Por ejemplo,
+\(\left(\mathrm{Ln}(z)\right)' = \frac{1}{z}\). Equivalentemente, se puede
+obtener una derivada compleja por definición a través de las ecuaciones de
+Cauchy-Riemann.</p>
+<h2 id="ecuaciones-de-cauchy-riemann"><a class="header" href="#ecuaciones-de-cauchy-riemann">Ecuaciones de Cauchy-Riemann</a></h2>
+<p>Determinar la equivalencia de infinitas derivadas direccionales no es sencillo.
+Por suerte, Cauchy y Riemann demostraron que es suficiente con encontrar que la
+función es derivable desde dos direcciones ortogonales, como son los ejes real e
+imaginario. Sea \(f(z) = f(x + jy) = u(x, y) + jv(x, y)\). \(f(z)\) es
+diferenciable/holomorfa/analítica en aquellos puntos donde se cumple que:
+\[\exists f'(z) \iff \frac{\partial u}{\partial x} = \frac{\partial v}{\partial y} \land \frac{\partial u}{\partial y} = -\frac{\partial v}{\partial x}\]
+O, equivalentemente,
+\[f'(z) = \frac{\partial u}{\partial x} + j\frac{\partial v}{\partial x} = \frac{\partial v}{\partial y} - j\frac{\partial u}{\partial y}\]</p>
+<p>Si las ecuaciones de Cauchy-Riemann se cumplen, se dice que \(u(x, y)\) y
+\(v(x, y)\) son funciones <strong>conjugadas</strong>. Puede demostrarse que dos funciones
+conjugadas deben ser también funciones <strong>armónicas</strong>, es decir, que satisfacen
+la ecuación de Laplace \(\nabla^2 f = 0\):
+\[\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = \frac{\partial^2 v}{\partial x^2} + \frac{\partial^2 v}{\partial y^2} = 0\]
+Esta relación permite encontrar una de las funciones conjugadas dada la otra, con
+lo cual es posible construir una función analítica completa.</p>
+<h2 id="conformidad"><a class="header" href="#conformidad">Conformidad</a></h2>
+<p>Se dice que un mapeo \(w = f(z)\) es <strong>conforme</strong> si los ángulos entre curvas
+arbitrarias se preservan al aplicar el mapeo. Esto ocurre en aquellos puntos
+donde \(f(z)\) es analítica y además \(f'(z) \ne 0\)</p>
+<p><img src="analisis_complejo/img/mapeoconforme.png" alt="" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="series-complejas"><a class="header" href="#series-complejas">Series complejas</a></h1>
+<p>Anteriormente mencionamos que las funciones diferenciables son también
+analíticas, lo cual significa poder de expresar la función en términos de una
+serie de potencias convergente (<strong>síntesis</strong>). En variable real, escribiríamos
+algo como
+\[f(x) = \sum_{n = 0}^{\infty}{c_n (x - x_0)^n}\]
+Donde \(x_0\) es el centro de la serie en la línea real y \(c_n\) son los
+coeficientes de la serie, los cuales podrían determinarse con el teorema de
+Taylor o herramientas semejantes.</p>
+<p>Por el principio de <strong>continuación analítica</strong>, el cual
+ya hemos mencionado antes, puede &quot;extenderse&quot; la serie de potencias
+real al caso complejo siempre que la función real correspondiente sea analítica:
+\[f(z) = \sum_{n = 0}^{\infty}{c_n (z - z_0)^n}\]
+Esto quiere decir que tales funciones como \(e^z\), \(\sin(z)\), \(\cos(z)\)
+tienen el mismo comportamiento y reglas en variable compleja que lo que se conoce
+para variable real. Por ejemplo, tales propiedades como \(e^{a + b} = e^a e^b\)
+y \(\sin^2(z) + \cos^2(z) = 1\) se siguen manteniendo.</p>
+<p>Uno de los principales cambios en series complejas es que la idea de un radio
+de convergencia se generaliza a regiones de convergencia (<strong>ROC</strong>), aunque
+estas típicamente siguen siendo asociadas a un radio.  Para series de esta
+forma (iniciando en \(n = 0\)), se puede encontrar el radio de convergencia
+utilizando el criterio de d'Alembert:</p>
+<p>\[f(z) = \sum_{n=0}^{\infty}{c_n(z - z_0)^n} \implies R = \lim_{n\to\infty}{\left\vert\frac{c_n}{c_{n + 1}}\right\vert}\]</p>
+<p>Posteriormente se mostrará que la serie converge en la ROC \(|z - z_0| &lt; R\).
+Como ejemplo se muestra una serie y su ROC:</p>
+<p>\[\frac{1}{1 - z} = \sum_{n=0}^{\infty}{z^n}; |z| &lt; 1\]
+<img src="analisis_complejo/img/roc.png" alt="" /></p>
+<h2 id="múltiples-expansiones"><a class="header" href="#múltiples-expansiones">Múltiples expansiones</a></h2>
+<p>La forma más primitiva de encontrar series para una función es la división de
+polinomios. Por ejemplo, para \(\frac{1}{z - a}\) donde \(a\) es alguna
+constante, se puede realizar esta división de dos maneras. La primera es:</p>
+<p><img src="analisis_complejo/img/divpol1.png" alt="" /></p>
+<p>Esta primera serie converge si \(|z| &gt; |a|\). Podemos decir que la serie está
+&quot;centrada en infinito&quot;, lo cual se visualiza fácilmente utilizando la <strong>esfera
+de Riemann</strong>, una extensión de los complejos que trata a \(\infty\) como un
+elemento más del conjunto.</p>
+<p><img src="analisis_complejo/img/riemann.jpg" alt="" /></p>
+<p>La segunda serie, que ocurre si cambiamos el orden del denominador, es:</p>
+<p><img src="analisis_complejo/img/divpol2.png" alt="" /></p>
+<p>Esta otra serie converge si \(|z| &lt; |a|\), con centro en el origen. A continuación
+se muestran las dos regiones de convergencia:</p>
+<p><img src="analisis_complejo/img/dosrocs.png" alt="" /></p>
+<p>Esta &quot;ruptura&quot; en dos síntesis distintas para la misma función se debe a que en
+\(z = a\) encontramos un <strong>polo</strong>, un tipo de discontinuidad (queda una
+división entre cero) que estudiaremos más adelante. Nótese que, debido a la
+virtual equivalencia entre una función analítica y una función diferenciable,
+la razón de delimitar la serie en un polo es que la función deja de ser
+analítica en el mismo.</p>
+<h2 id="series-de-taylor"><a class="header" href="#series-de-taylor">Series de Taylor</a></h2>
+<p>Es posible realizar un desarrollo de potencias general para funciones diferenciables.
+A esto le denominamos <strong>series de Taylor</strong>. El teorema de Taylor nos otorga directamente
+la sucesión de coeficientes. Para un desarrollo de \(f(z)\) alrededor de \(z_0\) se
+cumple que:
+\[c_n = \frac{f^{(n)}(z_0)}{n!}\]
+La región de convergencia será \(|z - z_0| &lt; R\), donde el radio de convergencia
+\(R\) es el máximo permisible antes de llegar a un polo de la función.</p>
+<p>Se muestran a continuación algunas series de Taylor comunes:</p>
+<p><img src="analisis_complejo/img/taylor.png" alt="" /></p>
+<h2 id="series-de-laurent"><a class="header" href="#series-de-laurent">Series de Laurent</a></h2>
+<p>Son extensiones de las series de Taylor que pueden converger en <strong>anillos</strong>, no
+solo en interiores y exteriores de círculos, como se observa. Esto significa que
+pueden cubrir áreas delimitadas por polos, algo que las series de Taylor no pueden
+lograr.</p>
+<p><img src="analisis_complejo/img/laurent.png" alt="" /></p>
+<p>Las series de Laurent toman una forma más general que cubre todos los enteros, en
+vez de iniciar en \(n = 0\):
+\[f(z) = \sum_{n = -\infty}^{\infty}{c_n (z - z_0)^n}\]</p>
+<p>Esta suma puede separarse en una parte de términos de potencias negativas
+denominada <strong>parte principal</strong> y una parte de términos positivos (\(n = 0\)
+cuenta como &quot;positivo&quot;) que se denomina <strong>parte de Taylor</strong>. Es la parte
+principal la que le confiere a la serie de Laurent su capacidad para &quot;borrar&quot;
+parte de la región de convergencia que es mandatoria para una serie de Taylor.
+Estudiemos el caso de expandir la siguiente función en distintas
+ROCs: \[f(z) = \frac{1}{(z + 1)(z + 3)}\]</p>
+<p><img src="analisis_complejo/img/anillos.png" alt="" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="singularidades-polos-y-ceros"><a class="header" href="#singularidades-polos-y-ceros">Singularidades, polos y ceros</a></h1>
+<h2 id="coloreado-de-dominio"><a class="header" href="#coloreado-de-dominio">Coloreado de dominio</a></h2>
+<p>Esto no es parte de la materia, pero lo utilizaremos para aclarar la teoría de
+puntos. Un <a href="https://jutanium.github.io/ComplexNumberGrapher/">diagrama de coloreado de
+dominio</a> (utilicé ese para
+generar todas las imágenes) es un tipo de gráfica en dos dimensiones de una
+función en variable compleja.  El tono representa la fase y la claridad la
+magnitud de los valores de la función.  Se incluyen algunas gráficas para
+acostumbrar a la idea:</p>
+<ul>
+<li>
+<p>\(f(z) = z\)</p>
+<p><img src="analisis_complejo/img/color_z.png" alt="" /></p>
+</li>
+<li>
+<p>\(f(z) = e^z\)</p>
+<p><img src="analisis_complejo/img/color_exp%5Bz%5D.png" alt="" /></p>
+</li>
+</ul>
+<h2 id="puntos-del-dominio"><a class="header" href="#puntos-del-dominio">Puntos del dominio</a></h2>
+<p>Cada uno de los puntos del dominio de una función \(f(z)\) se pueden
+clasificar según si la función es analítica o no en ese punto. Sabemos que
+las series de Laurent se ven fuertemente afectadas por esta propiedad. Sea \(z_0\) un
+punto del dominio de \(f(z)\). Si desarrollamos una serie de Laurent para \(f(z)\)
+centrada en \(f(z_0)\), tenemos que:</p>
+<ul>
+<li>
+<p>Si \(f(z)\) es analítica en \(z = z_0\), \(z_0\) es un <strong>punto regular</strong>.</p>
+<ul>
+<li>
+<p>Equivalentemente, la parte principal de la serie será cero (\(c_n = 0\)
+para \(n &lt; 0\)), lo cual quiere decir que será equivalente a una serie de
+Taylor iniciada en \(n = 0\).</p>
+<p>\[\sum_{n = -\infty}^{\infty}{c_n(z - z_0)^n} = \sum_{n = -\infty}^{-1}{c_n(z - z_0)^n} + \sum_{n = 0}^{\infty}{c_n(z - z_0)^n} = \sum_{n = m}^{\infty}{c_n(z - z_0)^n}\]</p>
+</li>
+<li>
+<p>Si \(f(z_0) = 0\), el punto regular es además un <strong>cero</strong>.</p>
+<ul>
+<li>El <strong>orden</strong> \(m\) del cero es la cantidad de coeficientes consecutivos
+al inicio de la serie de Taylor que se anulan.</li>
+</ul>
+</li>
+<li>
+<p>Un punto regular que no es un cero se puede interpretar como un &quot;<strong>cero de
+orden cero</strong>&quot;. Generalmente, el término &quot;punto regular&quot; se utiliza para
+ceros de orden cero y no para otros tipos de ceros, con tal de evitar
+confusiones.</p>
+</li>
+<li>
+<p>Como la función es analítica en el punto regular, es infinitamente diferenciable
+en este punto. Un cero de orden \(m\) cumple que,
+\[f(z_0) = 0, f'(z_0) = 0, f''(z_0) = 0, ..., f^{(m - 1)}(z_0) = 0, f^{(m)}(z_0) \ne 0\]</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Si \(f(z)\) no es analítica en \(z = z_0\), \(z_0\) es una <strong>singularidad</strong>.</p>
+<ul>
+<li>
+<p>Si los coeficientes de la parte principal se anulan consecutivamente hasta
+los últimos \(m\) términos, la singularidad es un <strong>polo</strong> de orden
+\(m\). </p>
+<p>\[\sum_{n = -\infty}^{\infty}{c_n(z - z_0)^n} = \sum_{n = -\infty}^{-1}{c_n(z - z_0)^n} + \sum_{n = 0}^{\infty}{c_n(z - z_0)^n} = \sum_{n = -m}^{\infty}{c_n(z - z_0)^n}\]</p>
+</li>
+<li>
+<p>Los polos aislados (es decir, no inmediatamente rodeados de otros polos) de
+orden finito son singularidades <strong>removibles</strong>. Esto quiere decir que podemos
+definir por partes a una variante de la función en donde se le asigna un valor
+a este punto particular que coincida con el límite de la función original.</p>
+<p>\[\mathrm{Sa}(z) = \begin{cases}\frac{\sin(z)}{z}, &amp;z \ne 0 \\1, &amp; z = 0\end{cases}\]</p>
+<p><img src="analisis_complejo/img/color_sinc%5Bz%5D.png" alt="" /></p>
+</li>
+<li>
+<p>Si el orden es infinito (los coeficientes de la parte principal tienen
+infinitos términos que no se anulan), el resultante &quot;polo de infinito
+orden&quot; se conoce como <strong>singularidad esencial</strong>. Las singularidades
+esenciales son &quot;críticas&quot; y <strong>no removibles</strong>, ya que el comportamiento
+alrededor de la singularidad cambia según la dirección.</p>
+</li>
+<li>
+<p>Los puntos regulares también son &quot;<strong>polos de orden cero</strong>&quot;, además de ser
+ceros de orden cero.</p>
+</li>
+<li>
+<p>Un polo de orden \(m\) es también un cero de orden \(-m\) y viceversa.</p>
+</li>
+<li>
+<p>\(f(z)\) es <strong>meromorfa</strong> si todas sus singularidades son removibles. En
+otras palabras, una función meromorfa se puede &quot;arreglar&quot; fácilmente para
+volverla holomorfa en todo \(\mathbb{C}\).</p>
+</li>
+</ul>
+</li>
+<li>
+<p>En el caso de funciones racionales, los órdenes de ceros y polos son sus
+multiplicidades. En la formulación siguiente, los ceros de \(N(z)\) son
+también los ceros de \(f(z)\), y los ceros de \(D(z)\) son los polos de
+\(f(z)\).</p>
+<p>\[f(z) = \frac{N(z)}{D(z)} = A_0\frac{(z - z_{c1})^{m_{c1}}(z - z_{c2})^{m_{c2}}\cdots}{(z - z_{p1})^{m_{p1}}(z - z_{p2})^{m_{p2}}\cdots}\]</p>
+</li>
+<li>
+<p>Pueden haber polos y ceros en \(z = \infty\), por lo que siempre hay que
+estudiar estos dos casos. Recordar la esfera de Riemann y su asociación con
+series de Taylor &quot;invertidas&quot; (exteriores de círculos).</p>
+</li>
+<li>
+<p>A los polos y ceros de orden \(1\) o primer orden se les suele denominar
+<strong>simples</strong>.</p>
+</li>
+</ul>
+<h2 id="ejemplos"><a class="header" href="#ejemplos">Ejemplos</a></h2>
+<ul>
+<li>
+<p>\(f(z) = 1 + 2z - 3z^2 = -3(z + \frac{1}{3})(z - 1)\) tiene ceros de orden
+\(1\) en \(z = -\frac{1}{3}\) y \(z = 1\). El resto de puntos del
+dominio son puntos regulares.</p>
+</li>
+<li>
+<p>\(f(z) = z^{-1} = \frac{1}{z}\) tiene un polo de orden \(1\) en \(z = 0\).
+El resto de puntos son regulares.</p>
+<p><img src="analisis_complejo/img/color_z%5E-1.png" alt="" /></p>
+</li>
+<li>
+<p>\(f(z) = (z - j)^{-2}\) tiene un cero de orden \(-2\) en \(z = j\) y una
+singularidad esencial en \(z = \infty\).</p>
+<p><img src="analisis_complejo/img/color_%5Bz-j%5D%5E-2.png" alt="" /></p>
+</li>
+<li>
+<p>\(f(z) = \frac{z + 1}{(z + j2)(z - 1)^3}\) tiene un cero de primer orden en
+\(z = -1\), una singularidad esencial en \(z = \infty\), un polo de primer orden
+en \(z = -j2\) y un polo de tercer orden en \(z = 1\).</p>
+<p><img src="analisis_complejo/img/color_%5Bz+1%5D%5Bz+j2%5D%5E-1%5Bz-1%5D%5E-3.png" alt="" /></p>
+</li>
+<li>
+<p>\(f(z) = e^{1 / (z + 1)}\) tiene una singularidad esencial en \(z = -1\).</p>
+<p>\[e^z = 1 + \frac{z^1}{1!} + \frac{z^2}{2!} + \cdots + \frac{z^n}{n!} + \cdots\]
+\[\implies e^{1 / (z + 1)} = 1 + \frac{(z + 1)^{-1}}{1!} + \frac{(z + 1)^{-2}}{2!} + \cdots + \frac{(z + 1)^{-n}}{n!} + \cdots\]</p>
+<p><img src="analisis_complejo/img/color_exp%5B%5Bz+1%5D%5E-1%5D.png" alt="" /></p>
+</li>
+</ul>
+<h2 id="residuos"><a class="header" href="#residuos">Residuos</a></h2>
+<p>Podemos expresar la sucesión de coeficientes de Laurent como
+\[\ldots, c_{-n}, \ldots, c_{-2}, c_{-1}, c_0, c_1, c_2, \ldots, c_n, \ldots\]</p>
+<p>El coeficiente \(c_{-1}\)—el último de la parte principal—es especial y se
+conoce como el <strong>residuo</strong> de la serie asociada. Puede determinarse
+directamente a través del método del límite para separación en fracciones
+parciales:
+\[c_{-1} = \frac{1}{(m - 1)!}\lim_{z\to z_0}{\frac{\mathrm{d}^{m - 1}}{\mathrm{d}z^{m - 1}}(z - z_0)^m f(z)}\]</p>
+<p>Donde \(m\) es el orden de polo del centro \(z_0\). Esta fórmula solo sirve
+para series centradas en polos y no singularidades esenciales. Nótese que el
+residuo es una propiedad de una serie y no de la función que sintetiza, por lo
+que cada posible expansión de una función tendrá su propio residuo.</p>
+<p>En la siguiente sección estudiaremos algunas de las utilidades de los residuos.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="integración-compleja"><a class="header" href="#integración-compleja">Integración compleja</a></h1>
+<blockquote>
+<p>Residues arise […] naturally in several branches of analysis […]. Their
+consideration provides simple and easy-to-use methods, which are applicable
+to a large number of diverse questions, and some new results […].</p>
+<p>— Augustin-Louis Cauchy, Sur un nouveau genre de calcul, 1826.</p>
+</blockquote>
+<p>Como no existe un ordenamiento de los complejos (no puede responderse si \(z_1
+&gt; z_2\) en el caso general), no podemos hablar de integrales definidas a como
+se tratan en análisis real:
+\[\int_a^b{f(x)\mathrm{d}x} = F(b) - F(a); \frac{\mathrm{d}}{\mathrm{d}x}F(x) = f(x)\]</p>
+<p>En su lugar, para integrar desde un complejo \(a\) a un complejo \(b\),
+debemos además definir una <strong>trayectoria de integración</strong> \(C\) de entre
+muchas posibles. A las integrales resultantes les denominamos <strong>de contorno</strong> o
+<strong>de línea</strong>:
+\[\begin{align*}\int_C{f(z)\mathrm{d}z} &amp;= \int_C{(u(x, y) + jv(x, y))(\mathrm{d}x + \mathrm{d}y)} \\ &amp;= \int_C{(u(x, y)\mathrm{d}x - v(x, y)\mathrm{d}y)} + j\int_C{(v(x, y)\mathrm{d}x + u(x, y)\mathrm{d}y)} \\ &amp;= F(b) - F(a)\end{align*}\]</p>
+<p><img src="analisis_complejo/img/segmentos.png" alt="" /></p>
+<p>Esta última equivalencia en términos de antiderivadas es el <strong>teorema
+fundamental para integrales de línea</strong> y solo sirve si \(f(z)\) es analítica
+en todo el plano. Si \(C\) es una curva cerrada que no se interseca a sí
+misma—como por ejemplo una circunferencia—utilizamos una notación
+especial para la integral de contorno:
+\[\oint_C{f(z)\mathrm{d}z}\]</p>
+<h2 id="teorema-de-la-integral-de-cauchy"><a class="header" href="#teorema-de-la-integral-de-cauchy">Teorema de la integral de Cauchy</a></h2>
+<p>Este es un caso particular del teorema fundamental para integrales de línea en
+el caso de contornos cerrados. Si \(a\) es un punto en la curva cerrada y
+simple \(C\) y además \(f(z)\) es analítica en tanto \(C\) como su
+interior, puede decirse que la curva inicia y termina en el mismo punto
+\(a\), por lo cual:
+\[\oint_C{f(z)\mathrm{d}z} = F(a) - F(a) = 0\]</p>
+<p>Las implicaciones de este teorema son profundas, al punto de que también se le
+conoce como <strong>teorema fundamental de la integración compleja</strong>. Algunas de ellas
+son:</p>
+<ul>
+<li>
+<p>Si una función compleja es diferenciable, necesariamente también es
+integrable. Esto puede entenderse como una consecuencia indirecta de que las
+funciones diferenciables sean holomorfas, pues cada una de las infinitas
+derivadas debe poseer su integral en la dirección contraria.</p>
+</li>
+<li>
+<p>Las restricciones de la condición de holomorfismo son tan fuertes que, sin
+importar la escogencia de la función \(f(z)\) y la curva \(C\), la
+integral de contorno será cero siempre que la función no tenga singularidades
+sobre o dentro de \(C\).</p>
+</li>
+<li>
+<p>El valor de una integral compleja de contorno cerrado depende solamente de
+los polos encerrados por el contorno. Esto quiere decir que:
+\[\oint_{C}{f(z)\mathrm{d}z} = \sum_{n}{\oint_{C_{pn}}{f(z)\mathrm{d}z}}\]</p>
+<p>Donde \(C_{pn}\) es algún contorno cerrado—posiblemente un
+subcontorno de \(C\)—que solo contiene al polo \(n\) de \(f(z)\).
+La suma de integrales cubre solo los polos encerrados por \(C\).</p>
+<p><img src="analisis_complejo/img/linealidadcauchy.png" alt="" /></p>
+</li>
+</ul>
+<h2 id="fórmula-de-la-integral-de-cauchy"><a class="header" href="#fórmula-de-la-integral-de-cauchy">Fórmula de la integral de Cauchy</a></h2>
+<p>Esta relación permite encontrar \(f(z_0)\) o cualquiera de sus derivadas,
+asumiendo que la imagen está definida y que \(z_0\) es parte del interior de \(C\).
+\[f^{(n)}(z_0) = \frac{n!}{2\pi j}\oint_{C}{\frac{f(z)}{(z - z_0)^{n + 1}}\mathrm{d}z}\]</p>
+<p>En particular, cuando \(n = 0\),
+\[f(z_0) = \frac{1}{2\pi j}\oint_{C}{\frac{f(z)}{z - z_0}\mathrm{d}z}\]</p>
+<p>Lo cual lleva a un método para el cálculo de integrales de contorno alrededor
+de un polo \(z_0\):
+\[\oint_{C}{\frac{f(z)}{z - z_0}\mathrm{d}z} = 2\pi j\cdot f(z_0)\]</p>
+<h2 id="teorema-del-residuo"><a class="header" href="#teorema-del-residuo">Teorema del residuo</a></h2>
+<p>El <strong>teorema del residuo</strong> es, de los tres, el resultado más general para
+la evaluación de integrales de contorno. Lee:
+\[\oint{f(z)\mathrm{d}z} = 2\pi j\sum_{i = 1}^{n}{c_{-1}^{(i)}}\]</p>
+<p>Es decir, la suma de los residuos asociados a todos los polos dentro de la
+región de integración.</p>
+<ul>
+<li>
+<p>Esto quiere decir que si una expansión en serie de Laurent tiene un residuo
+distinto de cero, entonces el centro de la serie es un polo.  Esto coincide
+con lo que ya conocemos, puesto que si \(c_{-1}\) es distinto de cero
+entonces el centro \(z_0\) es un polo de al menos primer orden.</p>
+</li>
+<li>
+<p>Junto a la fórmula de la integral de Cauchy, permite relacionar el valor de
+\(f(z_0)\) con el residuo de \(\frac{f(z)}{z - z_0}\) para una expansión
+centrada en \(z_0\). Es decir, este teorema ayuda a &quot;agregar polos&quot;..</p>
+</li>
+</ul>
+<h2 id="parametrizaciones"><a class="header" href="#parametrizaciones">Parametrizaciones</a></h2>
+<p>Frecuentemente encontraremos patrones regulares que permiten simplificar nuestras
+integrales. Algunos de ellos son:</p>
+<ul>
+<li>
+<p>Arcos con centro en el origen: En estos casos podemos realizar la sustitución
+\(z = e^{j\theta} = \cos(\theta) + j\sin(\theta)\), lo cual nos permite
+reducir la variable de integración a una variable real angular.</p>
+<p><img src="analisis_complejo/img/paramarco.png" alt="" /></p>
+</li>
+<li>
+<p>Líneas horizontales o verticales: En estos casos encontraremos que alguno de
+\(\mathrm{d}x\) o \(\mathrm{d}y\) es cero. Nuevamente se reduce el
+problema a integrandos complejos con variables de integración reales.</p>
+<p><img src="analisis_complejo/img/paramrecta.png" alt="" /></p>
+</li>
+</ul>
+<h2 id="evaluación-de-integrales-reales"><a class="header" href="#evaluación-de-integrales-reales">Evaluación de integrales reales</a></h2>
+<p>Las integrales complejas de contorno simplifican el cálculo de algunos tipos de
+integrales reales a través del uso de estos poderosos teoremas.</p>
+<h3 id="integrales-impropias-sobre-todos-los-reales"><a class="header" href="#integrales-impropias-sobre-todos-los-reales">Integrales impropias sobre todos los reales</a></h3>
+<p>Dada alguna función real \(f(x)\) se tiene por continuación analítica que
+\[\int_{-\infty}^{\infty}{f(x)\mathrm{d}x} = \oint_D{f(z)\mathrm{d}z}\]</p>
+<p>Bajo la condición de que \(\lim{z \to \infty}{z f(z)} = 0\). \(D\) es el
+contorno que se muestra a continuación, donde el radio \(R\) tiende a
+infinito:</p>
+<p><img src="analisis_complejo/img/impropia.png" alt="" /></p>
+<h3 id="integrales-de-funciones-trigonométricas"><a class="header" href="#integrales-de-funciones-trigonométricas">Integrales de funciones trigonométricas</a></h3>
+<p>Si \(G(\sin(\theta), \cos(\theta))\) es racional y real, entonces
+\[\int_0^{2\pi}{G(\sin(\theta), \cos(\theta))\mathrm{d}\theta} = \oint_D{f(z)\mathrm{d}z}\]</p>
+<p>Donde \(D\) es la circunferencia unitaria \(|z| = 1\) en dirección
+positiva. Puede demostrarse que las sustituciones respectivas son:
+\[\begin{align*}z &amp;= e^{j\theta} \\ \mathrm{d}\theta &amp;= \frac{\mathrm{d}z}{jz} \\ \sin(\theta) &amp;= \frac{1}{2j}\left(z - \frac{1}{z}\right) \\ \cos(\theta) &amp;= \frac{1}{2}\left(z + \frac{1}{z}\right) \end{align*}\]</p>
+<h1 id="ejemplo"><a class="header" href="#ejemplo">Ejemplo</a></h1>
+<p>\[\begin{align*}
+&amp;\int_0^{2\pi}{\frac{1}{2 + \cos(\theta)}\mathrm{d}\theta} \\
+=&amp; \oint_C{\frac{1}{jz\left(2 + \frac{1}{2}\left(z + \frac{1}{z}\right)\right)}\mathrm{d}z}; C: |z| = 1 \\
+=&amp; \frac{2}{j}\oint_C{\frac{1}{4z + z^2 + 1}\mathrm{d}z} \\
+=&amp; \frac{2}{j}\oint_C{\frac{1}{(z - (-2 - \sqrt{3}))(z - (-2 + \sqrt{3}))}\mathrm{d}z} \\
+=&amp; \frac{2}{j}\oint_C{\frac{1 / (z - (-2 - \sqrt{3}))}{z - (-2 + \sqrt{3})}\mathrm{d}z} \\
+=&amp; \frac{2}{j}\left(2\pi j\cdot\frac{1}{(-2 + \sqrt{3}) - (-2 - \sqrt{3})}\right) \\
+=&amp; \frac{2\pi\sqrt{3}}{3}
+\end{align*}\]</p>
+<p><img src="analisis_complejo/img/sqrt3.png" alt="" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="análisis-de-fourier"><a class="header" href="#análisis-de-fourier">Análisis de Fourier</a></h1>
+<p>El análisis de Fourier es una técnica de descomposición de funciones que nos
+permite estudiar la dependencia en frecuencia cuando antes solo teníamos la
+dependencia en el tiempo. Específicamente, consideraremos dos variantes del
+análisis de Fourier:</p>
+<ul>
+<li>
+<p>Serie de Fourier: sintetiza el análisis de una función periódica.</p>
+</li>
+<li>
+<p>Transformada de Fourier: relaciona funciones, tanto periódicas como no
+periódicas, con su espectro continuo.</p>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="ortogonalidad"><a class="header" href="#ortogonalidad">Ortogonalidad</a></h1>
+<h2 id="espacios-lineales"><a class="header" href="#espacios-lineales">Espacios lineales</a></h2>
+<p>Inicialmente trataremos el caso de <strong>especios vectoriales</strong> conocidos con
+vectores de la forma \([ x_1, x_2, x_3, \ldots]^T\). Esta idea será
+generalizada a vectores abstractos, definidos por varias condiciones de
+linealidad que no son relevantes para la discusión. Estos vectores pueden
+<strong>combinarse linealmente</strong> para producir otro vector:
+\[\mathbf{x} = c_1\mathbf{u_1} + c_2\mathbf{u_2} + \ldots\]</p>
+<p>Trataremos conjuntos de vectores \(\{ \mathbf{u} \}\) <strong>linealmente
+independientes</strong>, es decir, que no pueden reescribirse uno en términos del
+otro.</p>
+<p>Intuitivamente, una <strong>base</strong> de un espacio vectorial es un conjunto de vectores
+linealmente independientes tal que cualquier vector en el espacio vectorial
+puede representarse como una combinación lineal de una serie de coeficientes
+con esta base. Por ejemplo, el vector \((2, 3, 4)\) en \(\mathbb{R}^3\)
+puede engenendarse de esta manera con la <strong>base canónica</strong> \(\{(1, 0, 0), (0,
+1, 0), (0, 0, 1)\}\):
+\[(2, 3, 4) = 2\cdot(1, 0, 0) + 3\cdot(0, 1, 0) + 4\cdot(0, 0, 1)\]</p>
+<h2 id="operaciones-dentro-de-espacios"><a class="header" href="#operaciones-dentro-de-espacios">Operaciones dentro de espacios</a></h2>
+<p>Algunas operaciones de interés que pueden definirse para un espacio lineal son:</p>
+<ul>
+<li>
+<p>La <strong>métrica</strong>: en vectores euclídeos es la &quot;distancia geométrica&quot; entre dos
+puntos.
+\[d : \mathbb{V}\times\mathbb{V}\to \mathbb{R}\]
+Por ejemplo, la métrica en \(\mathbb{R}^2\) es
+\[d(\mathbf{u}, \mathbf{v}) = \|\mathbf{u} - \mathbf{v}\|\]</p>
+</li>
+<li>
+<p>La <strong>norma</strong>: generaliza la idea de &quot;magnitud&quot;.
+\[\|\mathbf{u}\| : \mathbb{V}\to\mathbb{R}\]
+Para los espacios euclídeos, esto es simplemente \(\sqrt{x_1^2 + x_2^2 + \ldots}\).</p>
+</li>
+<li>
+<p>El <strong>producto interno</strong>: generaliza al producto punto. Determina &quot;cuánto&quot; de un
+vector hay en otro vector, lo cual está muy asociado al ángulo entre vectores.
+\[\langle\mathbf{u}, \mathbf{v}\rangle : \mathbb{V}\times\mathbb{V}\to\mathbb{F}\]
+En cualquier espacio con producto interno, se puede reexpresar la norma como
+\[\langle\mathbf{u}, \mathbf{u}\rangle = \|\mathbf{u}\|^2\]</p>
+</li>
+<li>
+<p>El <strong>ángulo</strong>: también es una generalización. Siempre se cumple que:
+\[\cos(\angle(\mathbf{u}, \mathbf{v})) = \frac{\langle\mathbf{u}, \mathbf{v}\rangle}{\|\mathbf{u}\|\|\mathbf{v}\|}\]</p>
+</li>
+</ul>
+<p>Por tanto, dos vectores son <strong>ortogonales</strong> (perpendiculares) si el ángulo entre ellos es de \(90^{\circ}\), lo cual se cumple si el producto interno es cero.</p>
+<h2 id="espacios-funcionales"><a class="header" href="#espacios-funcionales">Espacios funcionales</a></h2>
+<p>Intuitivamente, podemos entender a una función como un <strong>vector funcional</strong>
+que tiene tantas dimensiones como permite su dominio. Por ejemplo, si definimos
+una función \(f(n)\) bajo el dominio \(\{1, 2, 3\}\) como:
+\[f(n) = \begin{cases}1;&amp;x = 1\\2;&amp;x = 2\\1;&amp;x = 3\end{cases}\]</p>
+<p>Entonces, <em>solo dentro de este dominio</em>, puede decirse que \(f(n)\) corresponde
+al vector \([1, 2, 1]^T\). Si hablamos ahora de una función \(f(n) : \mathbb{N}
+\to \mathbb{N}\) dada por:
+\[f(n) = \frac{n(n + 1)}{2}\]</p>
+<p>Entonces obtenemos respectivamente un vector cuya enésima dimensión es el enésimo
+natural, es decir, un vector de <strong>infinitas dimensiones</strong>. El vector funcional
+será ahora \([0, 1, 3, 6, 10, 15, \ldots]^T\). Si se define una función sobre los
+enteros, \(f(n) : \mathbb{Z}\to\mathbb{Z}\):
+\[f(n) = (-1)^n n^2\]</p>
+<p>Entonces una vez más se tiene un vector funcional de infinitas dimensiones,
+pero ahora no existe una &quot;primera&quot; dimensión. El vector será \([\ldots, 4, -1, 0,
+-1, 4, \ldots]^T\).</p>
+<p>Tómese finalmente a una función real,
+\[f(x) = e^x\]</p>
+<p>Ya no podemos expresar el vector funcional utilizando notación matricial, ya
+que el vector funcional es ahora <strong>continuo</strong> y no discreto. Por ejemplo, la
+dimensión \(\sqrt{2}\) del vector \(f(x)\) es \(e^{\sqrt{2}}\). Sobra
+decir que todo lo anterior se extiende también a los complejos. Extender a
+vectores de infinitas y continuas dimensiones lleva a que el producto interno es
+ahora una integral definida para un intervalo \([a, b]\):
+\[\langle f(x), g(x)\rangle = \int_a^b{f^*(x)g(x)\mathrm{d}x}\]</p>
+<p>A partir de lo anterior se pueden expresar las demás operaciones. Por ejemplo,
+la norma se vuelve:
+\[\|f(x)\| = \sqrt{\langle f(x), f(x)\rangle} = \sqrt{\int_a^b{|f(x)|^2\mathrm{d}x}}\]</p>
+<p>El <strong>ángulo entre dos funciones</strong> es exactamente igual que para otros espacios:
+\[\cos(\angle(f(x), g(x))) = \frac{\langle f(x), g(x)\rangle}{\|f(x)\|\|g(x)\|}\]</p>
+<p>Esto quiere decir que <strong>dos funciones son ortogonales</strong> en un intervalo \([a,
+b]\) (posiblemente todo \(\mathbb{R}\)) si su producto interno es cero.
+Entonces, es posible conformar una <strong>base funcional ortogonal</strong> que es capaz de
+<strong>sintetizar</strong> cualquier función en el dominio dado a través de una combinación
+lineal.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="series-de-fourier"><a class="header" href="#series-de-fourier">Series de Fourier</a></h1>
+<p>La síntesis de una función \(f(x)\) como la combinación lineal de una base
+funcional ortonormal \(\{u_k(x)\}; k\in\mathbb Z\) con un vector funcional
+generador \(c_k\) se da de manera natural por:
+\[f(x) = \sum_{k = -\infty}^{\infty}{c_k u_k(x)}\]</p>
+<p>A la anterior se le conoce como <strong>serie de Fourier generalizada</strong>, su nombre
+viene de que sirve para cualquier base funcional ortogonal. Dada una escogencia
+de \(u_k(x)\), es necesario descomponer a la función \(f(x)\) en cada una
+de sus dimensiones desde la perspectiva de la base \({ u_k(x) }\).</p>
+<p>Considérese un caso simplifcado con tal de encontrar \(c_k\). Sea el vector
+euclídeo \((3, 5)\) junto a la base ortogonal \({(2, 0), (0, 6)}\).
+Intuitivamente, podemos decir que hay &quot;\(\frac{3}{2}\) de 2&quot; en la primera
+coordenada de base: \(3\). También puede decirse que hay &quot;\(\frac{5}{6}\) de
+\(6\)&quot; en la coordenada de valor \(6\) de la base.  Sin pembargo, al calcular el
+producto punto del vector deseado con cada vector de la base se obtiene:
+\[\begin{align*}(3, 5)\cdot(2, 0) &amp;= 3\cdot 2 = 6\\(3, 5)\cdot(0, 6) &amp;=
+5\cdot 6 = 30\\\end{align*}\]</p>
+<p>Si la operación terminara aquí, esto querría decir que \(c = (5, 30)\), pero
+eso no puede estar bien, ya que se obtendría un valor distinto al sintetizar.
+Nótese que el &quot;problema&quot; es que el producto punto multiplica por cada dimensión
+de cada vector de la base, en vez de dividir. Podemos arreglar esto al dividir
+por el cuadrado de las magnitudes de los vectores de la base:
+\[\begin{align*}\frac{3\cdot 2}{2^2} = \frac{3}{2}\\\frac{5\cdot 6}{6^2} = \frac{5}{6}\\\end{align*}\]</p>
+<p>Estos valores sí representan apropiadamente la descomposición del vector
+original en sus constituyentes respecto a la base, tal que \(c =
+\left(\frac{3}{2}, \frac{5}{6}\right)\). Esta operación de encontrar los
+coeficientes \(c_k\) se conoce como <strong>análisis</strong>, en algún sentido el opuesto
+de síntesis. Así, <strong>análisis de Fourier</strong> es cualquier análisis realizado
+dentro de un espacio funcional. El análisis de Fourier para series generales
+viene dado por:
+\[c_k = \frac{\langle u_k(x), f(x)\rangle}{\|u_k(x)\|^2}\]</p>
+<p>Nótese que esto es solo una generalización algebraica del argumento anterior
+para vectores euclídeos. El numerador de esta fracción dice &quot;cuánto&quot; de
+\(u_k(x)\) hay en \(f(x)\), mientras que el denominador normaliza el
+elemento de la base (la base debe ser ortogonal, pero puede no ser ortonormal).</p>
+<p><img src="fourier/img/descomposicion-general.png" alt="" /></p>
+<h2 id="serie-exponencial-compleja"><a class="header" href="#serie-exponencial-compleja">Serie exponencial compleja</a></h2>
+<p>La variable independiente se tomará ahora como \(t\) en vez de \(x\), ya
+que típicamente representa tiempo real. Si la función \(f(t)\) es periódica
+con frecuencia fundamental \(\omega_0 = \frac{2\pi}{T}\), entonces se puede
+sintetizar a \(f(t)\) como:
+\[f(t) = \sum_{k = -\infty}^{\infty}{c_k e^{j\omega_0 kt}}\]</p>
+<p>Y su análisis, para cualquier \(t_0\) en el dominio, es:
+\[c_k = \frac{1}{T}\int_{t_0}^{t_0 + T}{e^{-j\omega_0 kt}f(t)\mathrm{d}t}\]</p>
+<p>La familia de funciones \(\{ e^{j\omega_0 kt}; k \in \mathbb{Z} \}\) es
+ortogonal y <strong>armónicamente relacionada</strong>.</p>
+<h2 id="series-trigonométricas"><a class="header" href="#series-trigonométricas">Series trigonométricas</a></h2>
+<p>Mucha de la matemática que hemos cubierto no había sido desarrollada cuando
+Joseph Fourier describió originalmente su teoría. Su formulación original de la
+síntesis de funciones fue en términos de senos y cosenos, a lo que se le
+denomina <strong>serie trigonométrica</strong>:
+\[
+\begin{align*}
+f(t) &amp;= \frac{1}{2}a_0 + \sum_{k = 1}^{\infty}{a_k\cos(\omega_0kt)} + \sum_{k = 1}^{\infty}{b_k\sin(\omega_0kt)} \\
+c_k &amp;= \frac{a_k - jb_k}{2} \\
+a_k &amp;= 2\mathrm{Re}\{c_k\} = 2|c_k|\cos(\theta_k) = \frac{2}{T}\int_{t_0}^{t_0 + T}{f(t)\cos(\omega_0kt)\mathrm{d}t} \\
+b_k &amp;= -2\mathrm{Im}\{c_k\} = -2|c_k|\sin(\theta_k) = \frac{2}{T}\int_{t_0}^{t_0 + T}{f(t)\sin(\omega_0kt)\mathrm{d}t}
+\end{align*}
+\]</p>
+<p>Esta expresión nos acerca más al significado fundamental de las series de
+Fourier, ya que observamos que la función original <strong>es</strong> una suma de senos y
+cosenos que coinciden de la manera correcta para constituir a la función. Es
+posible reducir los senos a cosenos desfasados, con lo cual se obtiene una sola
+suma en forma de la <strong>serie de cosenoidales desfasadas</strong>:
+\[
+\begin{align*}
+f(t) &amp;= c_0 + \sum_{k = 1}^{\infty}{\widetilde{c}_k\cos(\omega_0kt + \theta_k)} \\
+\widetilde{c}_k &amp;= 2|c_k| \\
+\theta_k &amp;= \angle c_k
+\end{align*}
+\]</p>
+<p>Con esto llegamos al hecho más importante acerca de las series de Fourier: cada
+armónico, con su respectiva frecuencia que es múltiplo de la frecuencia
+fundamental, está asociado a una amplitud y un desfase, la síntesis no es más
+que la combinación lineal de las sinusoides respectivas. Posteriormente,
+extenderemos esta idea a señales no periódicas con la transformada de Fourier.</p>
+<p><img src="fourier/img/sintesis.png" alt="" /></p>
+<p>Al &quot;rebote&quot; alrededor de discontinuidades, como se observa en la imagen
+anterior, se le conoce como <strong>fenómeno de Gibbs</strong> y es uno de los
+requerimientos del análisis de Fourier: solo funciona bien en vecindades
+continuas. Luego se cubrirán herramientas que permiten estudiar sistemas no
+continuos.</p>
+<p>Los coeficientes \(c_k\) tienen un significado importante que se estudiará
+más adelante. A su graficación se denomina <strong>espectro</strong> de \(f(t)\).</p>
+<p><img src="fourier/img/espectro-series.png" alt="" /></p>
+<h2 id="propiedades-del-análisis"><a class="header" href="#propiedades-del-análisis">Propiedades del análisis</a></h2>
+<ul>
+<li>
+<p>El análisis es <strong>lineal</strong>.</p>
+</li>
+<li>
+<p>Los coeficientes del análisis de una función par tienen parte imaginaria
+nula. \(f(t) = \cos(t)\) es un ejemplo de una función par.</p>
+</li>
+<li>
+<p>Los coeficientes del análisis de una función impar tienen parte real
+nula. \(f(t) = \sin(t)\) es un ejemplo de una función impar.</p>
+</li>
+<li>
+<p>Por corolario de lo anterior, toda función puede separarse en componentes
+simétricas, una par y otra impar, tal como realizamos antes con \(e^z\)
+para obtener las funciones trigonométricas hiperbólicas.
+\[
+\begin{align*}
+f(t) &amp;= f_e(t) + f_o(t) \\
+f_e(t) &amp;= \frac{f(t) + f(-t)}{2} = f_e(-t) \\
+f_o(t) &amp;= \frac{f(t) - f(-t)}{2} = -f_o(-t)
+\end{align*}
+\]
+Puede verificarse que \(\cos_o(t) = 0\) y \(\sin_e(t) = 0\).</p>
+</li>
+<li>
+<p>Si \(f(t)\) es real, entonces \(c_k\) es una función <strong>hermítica</strong>: \(c^*_{-k} = -c_k\).</p>
+</li>
+<li>
+<p>Un desplazamiento temporal de \(\tau\) provoca un factor de \(e^{-j\omega_0 k\tau}\).</p>
+</li>
+<li>
+<p>La diferenciación provoca un factor de \(jk\omega_0\).</p>
+</li>
+</ul>
+<p><img src="fourier/img/propiedades-serie0.png" alt="" />
+<img src="fourier/img/propiedades-serie1.png" alt="" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="transformada-de-fourier"><a class="header" href="#transformada-de-fourier">Transformada de Fourier</a></h1>
+<p>Mencionamos que el espectro de una función periódica continua está dado por los
+coeficientes \(c_k\) que resultan del análisis en series de Fourier.  Además,
+notamos que este espectro es una <strong>función discreta</strong>, ya que \(k\) es una
+variable entera. Luego de desarrollar el análisis y síntesis en series, el
+mismo Fourier notó una forma de mejorar una gran limitante de su teoría,
+específicamente que solo sirve para funciones periódicas. La idea consistió en
+abusar una interpretación de funciones no periódicas, dentro de un rango
+finito, como funciones periódicas que tienen a ese rango como período.</p>
+<p><img src="fourier/img/periodo-finito.png" alt="" /></p>
+<p>Es posible realizar un desarrollo en series de Fourier para el caso anterior.
+Claro, solo será válido dentro de la región que realmente corresponde a la
+función original. Esta idea funciona, pero tiene otra limitante: el período
+&quot;artificial&quot; enmarca qué tanto de la función puede estudiarse de esta forma.
+Así, un paso más consiste en establecer \(T \to \infty\), con lo que se
+obtiene una herramienta capaz de estudiar funciones no periódicas en su
+totalidad, a la cual se le denomina <strong>transformada de Fourier</strong>:
+\[F(j\omega) = \mathcal{F}\{f(t)\}(j\omega) = \int_{-\infty}^{\infty}{f(t)e^{-j\omega t}\mathrm{d}t}\]</p>
+<p>Nótese que esto no es más que una expresión distinta para los coeficientes de
+la serie exponencial compleja, ya que:
+\[c_k = \frac{1}{T}X(jk\omega_0)\]</p>
+<p>La transformada de Fourier es un tipo de <strong>transformada integral</strong>, relaciona a
+una función \(f(t)\) con otra función \(F(j\omega)\). En otras palabras,
+transforma del <strong>dominio de tiempo</strong> al <strong>dominio de frecuencia</strong>. Tal como las
+series de Fourier sintetizan funciones periódicas a partir de su análisis en
+forma de sinusoides desfasadas con frecuencias discretas, una transformada de
+Fourier determina el <strong>contenido de frecuencias</strong> de una función. Nótese que
+ahora estas frecuencias son continuas y no un múltiplo entero de alguna
+frecuencia fundamental.</p>
+<p>La transformada de Fourier tiene una <strong>inversa</strong>, que permite pasar del dominio
+de frecuencia al dominio de tiempo:
+\[f(t) = \mathcal{F}^{-1}\{F(j\omega)\} = \frac{1}{2\pi}\int_{-\infty}^{\infty}{X(j\omega)e^{j\omega t}\mathrm{d}\omega}\]</p>
+<p>La transformada no inversa también se le conoce como <strong>transformada directa</strong>.</p>
+<h2 id="condiciones-de-dirichlet"><a class="header" href="#condiciones-de-dirichlet">Condiciones de Dirichlet</a></h2>
+<p>No toda función tiene una transformada de Fourier definida. Excepto en puntos
+de discontinuidad, las <strong>condiciones de Dirichlet</strong> establecen las condiciones
+bajos las que esto es posible:</p>
+<ul>
+<li>
+<p>\(f(t)\) debe ser absolutamente integrable.
+\[\int_{-\infty}^{\infty}{|f(t)|\mathrm{d}t} &lt; \infty\]</p>
+</li>
+<li>
+<p>La cantidad de extremos (máximos y mínimos) locales de \(f(t)\) debe ser
+finita dentro de cualquier intervalo finito.</p>
+</li>
+<li>
+<p>El número de discontinuidades de \(f(t)\) debe ser finito dentro de
+cualquier intervalo finito.</p>
+</li>
+</ul>
+<h2 id="escalón-unitario-e-impulso-unitario"><a class="header" href="#escalón-unitario-e-impulso-unitario">Escalón unitario e impulso unitario</a></h2>
+<p>El escalón unitario es una discontinuidad de &quot;encendido o apagado&quot;, definido por:
+\[
+u(t) = \begin{cases}
+0; &amp; t &lt; 0 \\
+1; &amp; t \ge 0
+\end{cases}
+\]</p>
+<p>Por su parte, el impulso unitario representa un cambio brusco en un instante
+de tiempo:
+\[\delta(t) = \begin{cases} 0; &amp; t \ne 0 \\ \infty; &amp; t = 0 \end{cases}\]</p>
+<p>Y están relacionadas por
+\[\frac{\mathrm{d}}{\mathrm{d}t}u(t) = \delta(t)\]</p>
+<p><img src="fourier/img/derivacion.png" alt="" /></p>
+<h2 id="algunas-transformadas-de-fourier"><a class="header" href="#algunas-transformadas-de-fourier">Algunas transformadas de Fourier</a></h2>
+<p><img src="fourier/img/modulacion.png" alt="" />
+<img src="fourier/img/transformadas.png" alt="" /></p>
+<h2 id="propiedades"><a class="header" href="#propiedades">Propiedades</a></h2>
+<p><img src="fourier/img/propiedades-transformada0.png" alt="" />
+<img src="fourier/img/propiedades-transformada1.png" alt="" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="sistemas-lti"><a class="header" href="#sistemas-lti">Sistemas LTI</a></h1>
+<p>Recuérdese que un sistema es aquello que transforma una señal de entrada en una
+señal de salida. Se dice que un sistema es <strong>lineal</strong> si una combinación lineal
+de dos señales de entrada cualesquiera produce una combinación lineal
+respectiva en la salida.
+\[\mathcal{T}\{\alpha_1x_1(t) + \alpha_2x_2(t)\} = \alpha_1y_1(t) + \alpha_2y_2(t)\]</p>
+<p>Por esto es que decimos que los elementos eléctricos pasivo-reactivos son
+lineales, a pesar de que sus relaciones tensión-corriente no son una ecuación
+lineal. Para el caso del capacitor,
+\[
+\begin{align*}
+i(t) &amp;= C\frac{\mathrm{d}v}{\mathrm{d}t} \\
+&amp;= C\frac{\mathrm{d}}{\mathrm{d}t}(\alpha_1v_1(t) + \alpha_2v_2(t)) \\
+&amp;= C\alpha_1\frac{\mathrm{d}v_1}{\mathrm{d}t} + C\alpha_2\frac{\mathrm{d}v_2}{\mathrm{d}t} \\
+&amp;= \alpha_1i_1(t) + \alpha_2i_2(t)
+\end{align*}
+\]</p>
+<p>Esta también es la razón por la que decimos que un diodo semiconductor no es lineal:
+\[
+\begin{align*}
+i(t) &amp;= I_s \exp\left[\frac{V_D(t)}{V_t}\right] \\
+&amp;= I_s \exp\left[\frac{\alpha_1 V_1(t) + \alpha_2 V_2(t)}{V_t}\right] \\
+&amp;= I_s \exp\left[\frac{\alpha_1 V_1(t)}{V_t}\right]\exp\left[\frac{\alpha_2 V_2(t)}{V_t}\right] \\
+&amp;= I_s\left(\frac{i_1(t)}{I_s}\right)^{\alpha_1}\left(\frac{i_2(t)}{I_s}\right)^{\alpha_2} \\
+&amp;\ne \alpha_1i_1(t) + \alpha_2i_2(t)
+\end{align*}
+\]</p>
+<p>Hay muchos sistemas que parecen lineales pero no lo son. Por ejemplo,
+\[
+\begin{align*}
+y(t) &amp;= x(t) + c; c \ne 0 \\
+&amp;= \alpha_1x_1(t) + \alpha_2x_2(t) + c \\
+&amp;\ne \alpha_1(x_1(t) + c) + \alpha_2(x_2(t) + c) \\
+&amp;= \alpha_1y_1(t) + \alpha_2y_2(t)
+\end{align*}
+\]</p>
+<p>Otra propiedad importante es la <strong>invarianza en el tiempo</strong>. Un sistema es
+invariante en el tiempo si no depende de una variable temporal absoluta.  Es
+decir, si la referencia de reloj de un sistema invariante en el tiempo se corre
+por un desplazamiento arbitrario, la salida se corre igualmente:
+\[\mathcal{T}\{x(t - t_0)\} = y(t - t_0); \forall t_0\in\mathbb{R}\]</p>
+<p>Si un sistema es simultáneamente lineal e invariante en el tiempo, se abrevia
+como <strong>LTI</strong>.</p>
+<p><img src="fourier/img/lti-bloque.png" alt="" />
+<img src="fourier/img/lti.png" alt="" /></p>
+<h2 id="convolución"><a class="header" href="#convolución">Convolución</a></h2>
+<p>Conforme el ancho de los rectángulos de la imagen anterior tiende a cero, los
+mismos tienden a un impulso unitario, ya que siempre tendrán un área de
+\(1\). La salida debido a un único impulso \(h(t) =
+\mathcal{T}\{\delta(t)\}\) se conoce como <strong>respuesta al impulso</strong>.</p>
+<p>La <strong>convolución</strong> es una operación integral que juega un papel importante en
+todo esto.
+\[
+\begin{align*}
+f(t) * g(t) &amp;= \int_{-\infty}^{\infty}{f(\tau)g(t - \tau)\mathrm{d}\tau} \\
+\mathcal{F}\{f(t) * g(t)\} &amp;= F(j\omega)G(j\omega)
+\end{align*}
+\]</p>
+<p><img src="fourier/img/convolucion.png" alt="" /></p>
+<p>La característica más importante de la convolución es que su transformada es el
+producto de las transformadas de las funciones que se convolucionan. La
+definición integral no suele utilizarse directamente. Puede demostrarse que la
+aproximación en forma de rectángulos que se realizó en una imagen anterior
+tiende a una convolución. Por tanto, en un sistema LTI donde \(y(t) =
+\mathcal{T}\{x(t)\}\) se puede afirmar que:</p>
+<p>\[
+\begin{align*}
+y(t) &amp;= x(t) * h(t) = h(t) * x(t) \\
+Y(j\omega) &amp;= X(j\omega)H(j\omega) \\
+y(t) &amp;= \mathcal{F}^{-1}\left\{\mathcal{F}\{x(t)\}\mathcal{F}\{\mathcal{T}\{\delta(t)\}\}\right\}
+\end{align*}
+\]</p>
+<p>Donde \(H(j\omega)\) es la <strong>respuesta en frecuencia</strong> del sistema. La
+utilidad de esta teoría es enorme. Significa que si un sistema es LTI, entonces
+se puede conocer con facilidad su respuesta a cualquier entrada a partir de la
+transformada directa de Fourier y la transformada inversa de Fourier.</p>
+<h2 id="causalidad"><a class="header" href="#causalidad">Causalidad</a></h2>
+<p>Si la señal de entrada comienza a presentarse a partir de al menos \(t = 0\),
+entonces un sistema puede:</p>
+<ul>
+<li>
+<p>Tener una respuesta al menos a partir de \(t = 0\): Se dice <strong>causal</strong>, ya
+que la entrada provoca la salida en ese orden. Todo sistema físico o temporal
+es causal.</p>
+</li>
+<li>
+<p>Tener una respuesta antes de \(t = 0\): Se habla de un sistema <strong>no
+causal</strong>, puesto que la entrada no está ordenada con respecto a la salida.
+Esto más fácil de imaginar si se piensa que existen otras variables
+independientes posibles aparte del tiempo. Por analogía con el tiempo, puede
+decirse que es un sistema que es capaz de &quot;ver el futuro&quot;.</p>
+</li>
+<li>
+<p>Un caso especial de sistemas no causales son los sistemas <strong>acausales</strong>, en
+los cuales no hay salida después de la entrada.</p>
+</li>
+</ul>
+<h2 id="estabilidad"><a class="header" href="#estabilidad">Estabilidad</a></h2>
+<p>Si la magnitud de la entrada está <strong>acotada</strong> por \(0 &lt; |x(t)| \le A_x\), el
+sistema es <strong>estable</strong> si y solo si esto implica que la salida está igualmente
+acotada por \(0 \le |y(t)| \le A_y\). Este principio se conoce como <strong>BIBO</strong>
+(bounded input, bounded output). En el caso de sistemas LTI, puede demostrarse
+que el sistema es estable si y solo si su respuesta al impulso es absolutamente
+integrable:
+\[\int_{-\infty}^{\infty}{|h(t)|\mathrm{d}t} &lt; \infty\]</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="transformada-de-laplace"><a class="header" href="#transformada-de-laplace">Transformada de Laplace</a></h1>
+<p>La transformada de Fourier es útil para el análisis de funciones periódicas y
+no periódicas por igual, pero está restringida por las condiciones de
+Dirichlet. Muchas señales de interés en ingeniería no cumplen estas
+condiciones, por lo cual se necesita generalizar una vez más. La transformada
+de Laplace es, así, un constructo que converge para una gama más útil de
+vectores funcionales. </p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="transformada-bilateral-de-laplace"><a class="header" href="#transformada-bilateral-de-laplace">Transformada bilateral de Laplace</a></h1>
+<h2 id="limitaciones-de-la-transformada-de-fourier"><a class="header" href="#limitaciones-de-la-transformada-de-fourier">Limitaciones de la transformada de Fourier</a></h2>
+<p>Sea la señal \(f(t) = e^t u(t)\). Según la definición de la
+transformada de Fourier:</p>
+<p>\[
+\begin{align*}
+F(j\omega) &amp;= \int_{-\infty}^{\infty}{e^t u(t)e^{-j\omega t}\mathrm{d}t} \\
+&amp;= \int_0^{\infty}{e^{(1 - j\omega)t}\mathrm{d}t} \\
+&amp;= \lim_{t \to \infty}{\frac{1}{1 - j\omega}\left[e^{(1 - j\omega)t} - e^{(1 - j\omega)\cdot 0}\right]} \\
+&amp;= \lim_{t \to \infty}{\frac{1}{1 - j\omega}\left[e^t e^{-j\omega t} - 1\right]}
+\end{align*}
+\]</p>
+<p>Tanto la magnitud \(e^t\) como la fase \(-j\omega t\) divergen, así que el
+límite diverge. En otras palabras, no existe la transformada de Fourier de
+\(e^t u(t)\).</p>
+<h2 id="corrección-de-la-convergencia"><a class="header" href="#corrección-de-la-convergencia">Corrección de la convergencia</a></h2>
+<p>Recuérdese que la variable frecuencial de la transformada de Fourier es
+\(j\omega\) y no \(\omega\). Hasta el momento ello pudo parecer una simple
+escogencia estilística, pero en realidad no lo es. Si una función no cumple las
+condiciones de Dirichlet, es en ocasiones posible encontrar una transformada de
+Fourier si se multiplican las señales por una exponencial conveniente. Tomando
+el mismo caso anterior, sea \(g(t) = f(t)e^{-5t}\). Repitiendo el proceso,</p>
+<p>\[
+G(j\omega) = \mathcal{F}\{f(t)e^{-5t}\} = \mathcal{F}\{e^{-4t} u(t)\} = \frac{1}{j\omega + 4}
+\]</p>
+<p>En un caso más general, puede definirse una constante \(\sigma &gt; 1; \sigma \in
+\mathbb{R}\) tal que \(g(t) = f(t)e^{-\sigma t}\). Se tiene ahora que:</p>
+<p>\[
+G(j\omega) = \mathcal{F}\{f(t)e^{-\sigma t}\} = \mathcal{F}\{e^{-(\sigma - 1)t} u(t)\} = \frac{1}{j\omega + \sigma - 1}
+\]</p>
+<p>No es coincidencia que \(\sigma\) y \(j\omega\) se sumen en el resultado,
+puesto que la transformada está definida como:</p>
+<p>\[G(j\omega) = \int_{-\infty}^{\infty}{e^t u(t) e^{-\sigma t}e^{-j\omega t}\mathrm{d}t}
+= \int_{-\infty}^{\infty}{e^t u(t) e^{-(\sigma + j\omega)t}\mathrm{d}t}\]</p>
+<p>Por lo cual es esperable que, tal como la respuesta antes dependía de la variable
+\(j\omega\), ahora lo haga de una nueva variable \(s = \sigma + j\omega\). Por
+tanto,</p>
+<p>\[F(s) = F(\sigma + j\omega) = \frac{1}{s - 1}\]</p>
+<p>A \(s\) se le llama <strong>frecuencia compleja</strong>. Esta transformada
+generalizada, expresada en términos de frecuencia compleja, se llama
+<strong>transformada de Laplace</strong>.</p>
+<p>\[F(s) = F(\sigma + j\omega) = \mathcal{L}\{f(t)\} = \int_{-\infty}^{\infty}{f(t)e^{-st}\mathrm{d}t}\]</p>
+<p>Esta definición no es válida para cualquier \(s\), ya que solo algunos
+valores de \(\sigma\) lograrán satisfacer las condiciones de Dirichlet. Por
+ejemplo, se mencionó que para la función \(g(t)\) antes definida, debe
+satisfacerse \(\sigma = \mathrm{Re}\{s\} &gt; 1\). Para el ejemplo inicial
+decimos que:
+\[\mathcal{L}\{e^t u(t)\} = \frac{1}{s - 1}; \sigma &gt; 1\]</p>
+<p>Como se demostró al inicio, la transformada de Fourier no es capaz de analizar
+esta función, pero ahora se encuentra que la de Laplace sí puede hacerlo.
+Nótese que si \(\sigma = 0\) entonces la transformada de Laplace se reduce a
+la transformada de Fourier.</p>
+<h2 id="identidad-de-las-transformadas-integrales"><a class="header" href="#identidad-de-las-transformadas-integrales">Identidad de las transformadas integrales</a></h2>
+<p>A la anterior también se le suele conocer como <strong>transformada bilateral de
+Laplace</strong> debido a que un caso especial de ella, llamada transformada
+unilateral de Laplace, es ubicua. Es importante dejar claro que solo existe una
+transformada de Laplace, la cual es bilateral. La así llamada &quot;transformada
+unilateral&quot; no existe como una transformada distinta, es solo una evaluación
+particular de la transformada bilateral. Bajo este mismo argumento, puede
+decirse que la transforma de Fourier tampoco es una transformada independiente,
+sino un caso especial de la transformada de Laplace. También puede realizarse
+la construcción inversa, puesto que ambas transformadas pueden escribirse en
+términos de la otra:</p>
+<p>\[
+\begin{align*}
+\mathcal{L}\{f(t)\}(\sigma + j\omega) &amp;= \mathcal{F}\{f(t)e^{-\sigma t}\}(j\omega) \\
+\mathcal{F}\{f(t)\}(j\omega) &amp;= \mathcal{L}\{f(t)\}(0 + j\omega)
+\end{align*}
+\]</p>
+<p>Por lo cual son en realidad la misma operación, al punto de ser prácticamente
+intercambiables.</p>
+<h2 id="regiones-de-convergencia"><a class="header" href="#regiones-de-convergencia">Regiones de convergencia</a></h2>
+<p>Como la transformada de Laplace es válida solo para algunos \(\sigma\), las
+ROC el <strong>plano \(s\)</strong> serán siempre planos paralelos al eje imaginario. El
+plano siempre bordeará los polos de la transformada</p>
+<p><img src="laplace/img/roc.png" alt="" /></p>
+<h2 id="naturaleza-de-extensión"><a class="header" href="#naturaleza-de-extensión">Naturaleza de extensión</a></h2>
+<p>Una función se denomina:</p>
+<ul>
+<li>
+<p><strong>Finita</strong> si no se extiende hasta ninguna infinidad.</p>
+</li>
+<li>
+<p><strong>Izquierda</strong> si se extiende hasta \(-\infty\) pero no hasta \(+\infty\).</p>
+</li>
+<li>
+<p><strong>Derecha</strong> si se extiende hasta \(+\infty\) pero no hasta \(-\infty\).
+Nótese que toda función causal debe ser derecha.</p>
+</li>
+<li>
+<p><strong>Bilateral</strong> si se extiende hasta \(\pm\infty\).</p>
+</li>
+</ul>
+<p>Que una función &quot;no se extienda&quot; quiere decir que se anula (adquiere un valor
+de cero).  Nótese que una función no tiene que extenderse solo en \(t \le 0\)
+para ser izquierda, simplemente debe estarlo en \(t &lt; \kappa\) para cualquier
+\(\kappa\) finito. La naturaleza de extensión de la función afecta la
+orientación de la ROC.</p>
+<p><img src="laplace/img/roc-rangos.png" alt="" /></p>
+<h2 id="fourier-y-el-plano-s"><a class="header" href="#fourier-y-el-plano-s">Fourier y el plano \(s\)</a></h2>
+<p>La transformada de Fourier existe solo cuando la recta imaginaria \(j\omega\)
+es parte de la ROC. Por esta razón, puede pensarse en la transformada de
+Fourier como una operación a lo largo del eje imaginario del plano \(s\).</p>
+<p><img src="laplace/img/roc-polos.png" alt="" /></p>
+<h2 id="transformada-inversa-de-laplace"><a class="header" href="#transformada-inversa-de-laplace">Transformada inversa de Laplace</a></h2>
+<p>La transformada de Laplace también tiene <strong>inversa</strong>:
+\[
+\begin{align*}
+f(t) &amp;= \frac{1}{2\pi}\int_{-\infty}^{\infty}{F(\sigma + j\omega)e^{(\sigma + j\omega)t}\mathrm{d}\omega} \\
+&amp;= \frac{1}{2\pi j}\int_{\sigma - j\infty}^{\sigma + j\infty}{F(s)e^{st}\mathrm{d}s} \\
+&amp;= \frac{1}{2\pi j}\oint_C{F(s)e^{st}\mathrm{d}s}
+\end{align*}
+\]</p>
+<p><img src="laplace/img/bromwich.png" alt="" /></p>
+<h2 id="propiedades-1"><a class="header" href="#propiedades-1">Propiedades</a></h2>
+<p><img src="laplace/img/propiedades-bilateral.png" alt="" /></p>
+<h2 id="algunas-transformadas"><a class="header" href="#algunas-transformadas">Algunas transformadas</a></h2>
+<p><img src="laplace/img/tabla-bilateral.png" alt="" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="transformada-unilateral-de-laplace"><a class="header" href="#transformada-unilateral-de-laplace">Transformada unilateral de Laplace</a></h1>
+<h2 id="laplace-y-sistemas-lti"><a class="header" href="#laplace-y-sistemas-lti">Laplace y sistemas LTI</a></h2>
+<p>Dado un sistema LTI, se puede hacer exactamente el mismo análisis convolucional
+que se realizó para la transformada de Fourier, obteniendo:</p>
+<p>\[
+\begin{align*}
+y(t) &amp;= h(t) * x(t) \\
+\implies Y(s) &amp;= H(s)X(s)
+\end{align*}
+\]</p>
+<p>Esta aplicación es más poderosa que con Fourier, ya que sirve para sistemas
+inestables que la transformada de Fourier no puede estudiar.</p>
+<h2 id="estabilidad-y-causalidad"><a class="header" href="#estabilidad-y-causalidad">Estabilidad y causalidad</a></h2>
+<p>Si un plano \(s\) contiene a \(j\omega\), entonces la función tiene
+transformada de Fourier y por tanto es BIBO-estable.</p>
+<p>La causalidad puede relacionarse con la extensión de la ROC en el plano
+\(s\), puesto que un sistema derecho con corte en \(t &gt; 0\) es causal.</p>
+<h2 id="transformada-unilateral"><a class="header" href="#transformada-unilateral">Transformada unilateral</a></h2>
+<p>Frecuentemente interesa el análisis de sistemas causales. Para una función
+causal \(f(t)\) se anula un lado de la integral de Laplace, ya que \(t &lt; 0 \implies
+f(t) = 0\):</p>
+<p>\[F(s) = \int_{-\infty}^{\infty}{f(t)e^{-st}\mathrm{d}t} = \int_0^{\infty}{f(t)e^{-st}\mathrm{d}t}\]</p>
+<p>Algunas funciones están definidas con valores no nulos para \(t &lt; 0\), pero
+solo interesan en la región causal. Esto se logra multiplicando a la función
+por un escalón unitario. Por ejemplo, \(e^-t \ne 0, t &lt; 0\), pero un sistema
+real podría estar modelado por \(f(t) = e^-t u(t)\), que sí es una función
+causal.  En el caso general se define a la <strong>transformada unilateral de Laplace</strong>:</p>
+<p>\[F_u(s) = \mathcal{L_u}\{f(t)\} = \mathcal{L}\{f(t)u(t)\} = \int_0^{\infty}{f(t)e^{-st}\mathrm{d}t}\]</p>
+<p>Por tanto, un sistema causal siempre debe analizarse con la transformada unilateral.</p>
+<h2 id="propiedades-2"><a class="header" href="#propiedades-2">Propiedades</a></h2>
+<p><img src="laplace/img/propiedades-unilateral.png" alt="" /></p>
+<h2 id="algunas-transformadas-unilaterales"><a class="header" href="#algunas-transformadas-unilaterales">Algunas transformadas unilaterales</a></h2>
+<p><img src="laplace/img/tabla-unilateral.png" alt="" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="aplicaciones-de-las-transformadas-integrales"><a class="header" href="#aplicaciones-de-las-transformadas-integrales">Aplicaciones de las transformadas integrales</a></h1>
+<h2 id="por-qué-utilizar-fourier-si-existe-laplace"><a class="header" href="#por-qué-utilizar-fourier-si-existe-laplace">¿Por qué utilizar Fourier si existe Laplace?</a></h2>
+<p>La transformada de Fourier puede parecer obsoleta, puesto que las transformadas
+de Laplace son más generales y ergonómicas. Por razones históricas, el término
+&quot;transformada de Laplace&quot; va casi siempre asociado a la transformada
+unilateral, a pesar de que en la sección anterior se dijo que la versión
+completa es la forma bilateral. En la práctica, esta interpretación histórica
+es siempre utilizada. Laplace desarrolló la transformada unilateral, la
+bilateral fue una extensión posterior. Como resultado de esto, las herramientas
+de análisis usuales son:</p>
+<ul>
+<li>
+<p>Sistemas acausales y estudio de frecuencias implican Fourier. Por esta razón,
+se le encuentra frecuentemente en teoría de audio y vídeo, técnicas de
+transmisión analógica, algoritmos de compresión, etc. La interpretación
+espectral solo existe para \(\sigma = 0\), por lo cual sigue siendo
+necesaria la transformada de Fourier. La transformada bilateral no es de uso
+común; en vez de ella se utiliza Fourier, posiblemente con una exponencial
+adjunta para corrección de convergencia.</p>
+</li>
+<li>
+<p>La solución de ecuaciones diferenciales ordinarias, generalmente originadas
+de sistemas físicos y por tanto causales, es el fuerte de la transformada
+unilateral o transformada convencional de Laplace.</p>
+</li>
+</ul>
+<h2 id="solución-de-ecuaciones-diferenciales"><a class="header" href="#solución-de-ecuaciones-diferenciales">Solución de ecuaciones diferenciales</a></h2>
+<p>La transformada unilateral permite resolver ecuaciones diferenciales con
+relativa facilidad. Recordarse que deben establecerse condiciones iniciales.</p>
+<p>\[
+\begin{align*}
+4y' &amp;= 2y'' + 2y - \delta(t - 2) \\
+\implies 4\mathcal{L_u}\{y'\} &amp;= 2\mathcal{L_u}\{y''\} + 2\mathcal{L_u}\{y\} - \mathcal{L_u}\{\delta(t - 2)\} \\
+\implies 4sY_u(s) - y(0) &amp;= 2(s(sY_u(s) - y(0)) - y'(0)) + 2Y_u(s) - e^{-2s} \\
+\implies 4sY_u(s) &amp;= 2s²Y_u(s) + 2Y_u(s) - e^{-2s} \\
+\implies (2s² - 4s + 2)Y_u(s) &amp;= e^{-2s} \\
+\implies Y_u(s) &amp;= e^{-2s}\cdot\frac{1}{2s^2 - 4s + 2} \\
+&amp;= \frac{e^{-2s}}{2}\frac{1}{(s - 1)^2} \\
+\implies y(t) &amp;= \frac{1}{2}\mathcal{L_u}^{-1}\left\{e^{-2s}\cdot\frac{1}{(s - 1)^2}\right\} \\
+&amp;= \frac{1}{2}\mathcal{L_u}^{-1}\left\{\frac{1}{(s - 1)^2}\right\}\vert_{t \mapsto t - 2} \\
+&amp;= \frac{1}{2}\left[\mathcal{L_u}^{-1}\left\{\frac{1}{s^2}\right\}e^t\right]\vert_{t \mapsto t - 2} \\
+&amp;= \frac{1}{2}\left[te^t u(t)\right]\vert_{t \mapsto t - 2} \\
+&amp;= \boxed{\frac{1}{2}(t - 2)e^{t - 2}u(t - 2)}
+\end{align*}
+\]</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="transformada-z"><a class="header" href="#transformada-z">Transformada \(z\)</a></h1>
+<p>Las transformadas de Laplace y de Fourier son transformadas integrales y por
+tanto requieren funciones continuamente definidas. En sistemas reales esta rara
+vez es información disponible, ya que típicamente se dispone solo de valores
+continuos en intervalos discretos de muestreo.  La transformada \(z\) es una
+discretización de la transformada de Laplace que sirve en estos casos.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="funciones-en-tiempo-discreto"><a class="header" href="#funciones-en-tiempo-discreto">Funciones en tiempo discreto</a></h1>
+<p>Recordar de la introducción del curso que una señal puede ser <strong>continua</strong> o
+<strong>discreta</strong>, lo cual se refiere a si la señal está definida para precisiones
+arbitrariamente bajas de la variable independiente o si solo existe para
+algunos valores particulares de la variable independiente, típicamente
+<strong>incrementos enteros</strong>.</p>
+<p>Los caso más evidente de señales discretas aparecen en <strong>sistemas digitales</strong>,
+en los cuales los valores de la señal son discretos y finitos. Las señales
+continuas, por otro lado, suelen estar asociadas a <strong>sistemas analógicos</strong>.
+Los sistemas físicos son primordialmente analógicos, por lo cual una gran parte
+de la electrónica se dedica a este caso. Cuando un sistema físico ha de
+interactuar con un sistema digital, se vuelve necesario un <strong>ADC</strong> que
+convierte de señales analógicas a digitales.</p>
+<p><img src="z/img/adc.png" alt="" /></p>
+<p>Un ADC:</p>
+<ul>
+<li>
+<p><strong>Muestrea</strong> una señal a un intervalo regular, recolectando valores continuos
+en tiempo discreto.</p>
+</li>
+<li>
+<p><strong>Cuantifica</strong> y <strong>codifica</strong> los valores continuos para obtener una señal
+digital. Por ejemplo, un ADC de 12 bits puede emitir un resultado de entre 0,
+1, 2, ..., 4094 ó 4095 (\(2^{12} - 1\)). Existe un <strong>error</strong> asociado a
+este proceso: si 0 corresponde a -3.3V y 4095 corresponde a 3.3V, no es
+posible codificar perfectamente un cambio de 1V, ya que la división es
+\(\frac{6.6}{4095} \approx 0.0016\).</p>
+</li>
+</ul>
+<p><img src="z/img/muestreo.png" alt="" /></p>
+<p>Las funciones en tiempo discreto que se tratan en este curso <strong>no están
+definidas para entradas no enteras</strong>, ni siquiera son de valor cero.</p>
+<h2 id="discretización-de-funciones-utilitarias"><a class="header" href="#discretización-de-funciones-utilitarias">Discretización de funciones utilitarias</a></h2>
+<p>Antes se tenía que:
+\[u(t) = \int_{-\infty}^t{\delta(\tau)\mathrm{d}\tau}\]
+Por lo que ahora decimos:
+\[u(n) = \sum_{m = -\infty}^n \delta(m)\]</p>
+<p>Así que:
+\[
+\begin{align*}
+u(n) &amp;= \begin{cases}
+0; &amp; n &lt; 0 \\
+1; &amp; n \ge 0
+\end{cases} \\
+\delta(n) &amp;= \begin{cases}
+0; &amp; n \ne 0 \\
+1; &amp; n = 0
+\end{cases}
+\end{align*}
+\]</p>
+<p><img src="z/img/elementales.png" alt="" /></p>
+<h2 id="muestreos"><a class="header" href="#muestreos">Muestreos</a></h2>
+<p>Matemáticamente, el muestreo uniforme de una función \(f(t)\) a una <strong>tasa de
+muestreo</strong> de \(\frac{1}{T}\) puede visualizarse como:
+\[\hat f(t) = \sum_{n = -\infty}^{\infty}{f(nT)\delta(t - nT)}\]</p>
+<p>Un teorema muy importante en teoría de información es el <strong>teorema del
+muestre</strong>, el cual dice que la tasa de muestreo \(\frac{1}{T}\) debe ser al
+menos el doble que el ancho de bancha del espectro de la función para que no
+ocurra pérdida de información al muestrear.</p>
+<h2 id="transformada-z-1"><a class="header" href="#transformada-z-1">Transformada \(z\)</a></h2>
+<p>Tómese la transformada de Laplace de una señal muestread
+\[
+\begin{align*}
+\mathcal{L}\{\hat f(t)\} &amp;= \int_{-\infty}^{\infty}{\left[\sum_{n = -\infty}^{\infty}{f(nT)\delta(t - nT)}\right]e^{-st}\mathrm{d}t} \\
+&amp;= \sum_{n = -\infty}^{\infty}{f(nT)\int_{-\infty}^{\infty}{\delta(t - nT)e^{-st}\mathrm{d}t}} \\
+&amp;= \sum_{n = -\infty}^{\infty}{f(nT)e^{-snT}}
+\end{align*}
+\]</p>
+<p>Sean \(g(n) = f(nT)\) y \(z = e^{sT}; z \in \mathbb{C}\), por lo cual,
+\[
+\mathcal{L}\{\hat f(t)\} = \sum_{-\infty}^{\infty}{g(n)z^{-n}}
+\]</p>
+<p>A esta operación se le llama <strong>transformada \(z\) bilateral</strong>. En otras
+palabras,
+\[\mathcal{Z}\{f(nT)\} = \mathcal{L}\{\hat f(t)\}\]</p>
+<p>Explícitamente,
+\[X(z) = \mathcal{Z}\{x(n)\} = \sum_{n = -\infty}^{\infty}{x(n)z^{-n}}\]</p>
+<p>Nótese que la transformada \(z\):</p>
+<ul>
+<li>
+<p>Es una <strong>transformada discreta</strong>, no una transformada integral.</p>
+</li>
+<li>
+<p>Es una serie de Laurent.</p>
+</li>
+<li>
+<p>Como es una serie de potencias, converge solo dentro de una ROC.</p>
+</li>
+<li>
+<p>Está centrada en el origen.</p>
+</li>
+<li>
+<p>Su entrada es una función de variable entera.</p>
+</li>
+<li>
+<p>Su salida es una función de variable compleja.</p>
+</li>
+<li>
+<p>\(z = e^{sT}\) es un mapeo del plano \(s = \sigma + j\omega\) al plano
+\(z\).</p>
+</li>
+</ul>
+<p><img src="z/img/ejz-1.png" alt="" />
+<img src="z/img/ejz-2.png" alt="" /></p>
+<h2 id="transformada-inversa"><a class="header" href="#transformada-inversa">Transformada inversa</a></h2>
+<p>Semejante al caso general con Laplace, la transformada \(z\) inversa es:
+\[x(n) = \frac{1}{2\pi j}\oint_C{X(z)z^{n - 1}\mathrm{d}z}\]</p>
+<p>Donde \(C\) es cualquier contorno positivo dentro de la ROC que rodee al
+origen.</p>
+<h2 id="algunas-transformadas-1"><a class="header" href="#algunas-transformadas-1">Algunas transformadas</a></h2>
+<p><img src="z/img/tabla-bilateral.png" alt="" /></p>
+<h2 id="propiedades-3"><a class="header" href="#propiedades-3">Propiedades</a></h2>
+<p><img src="z/img/propiedades-bilateral.png" alt="" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="sistemas-en-tiempo-discreto"><a class="header" href="#sistemas-en-tiempo-discreto">Sistemas en tiempo discreto</a></h1>
+<h2 id="sistemas-lti-1"><a class="header" href="#sistemas-lti-1">Sistemas LTI</a></h2>
+<p>La misma teoría para sistemas LTI aplica aquí.</p>
+<h2 id="convolución-discreta"><a class="header" href="#convolución-discreta">Convolución discreta</a></h2>
+<p>La integral se vuelve una suma.</p>
+<p>\[y(n) = x(n)*h(n) = \sum_{k = -\infty}^{\infty}{x(k)h(n - k)}\]</p>
+<h2 id="ecuaciones-de-diferencias"><a class="header" href="#ecuaciones-de-diferencias">Ecuaciones de diferencias</a></h2>
+<p>Una <strong>ecuación de diferencias</strong> es el ańalogo discreto de una ecuación
+diferencial. Generalmente, estas ecuaciones surgen de <strong>recursión</strong>: la
+dependencia de un estado \(y(n)\) en un estado previo \(y(n - k)\) en el
+caso causal, o un estado futuro \(y(n + k)\) en el caso acausal. Esto
+típicamente aparece en sistemas retroalimentados. Por ejemplo, un flip-flop T
+puede modelarse a partir de la siguiente ecuación de diferencias:
+\[Q(n) = Q(n - 1)\oplus T(n)\]</p>
+<p><img src="z/img/ff-t.gif" alt="" /></p>
+<p>El sistema discreto conformado por este flip-flop necesita de exactamente una
+<strong>condición inicial</strong>, ya que la ecuación de diferencias no establece el estado
+al momento del primer flanco de reloj, solo la relación entre estados sucesivos.
+La condición inicial en la figura anterior es \(y(-1) = 0\).</p>
+<p>Al igual que con la transformada de Laplace y ecuaciones diferenciales, la
+resolución de ecuaciones de diferencias requiere la <strong>transformada \(z\)
+unilateral</strong>.</p>
+<p>\[F_u(n) = \mathcal Z_u\{f(n)\} = \sum_0^{\infty}{f(n)z^{-n}}\]</p>
+<h2 id="propiedades-de-la-transformada-unilateral"><a class="header" href="#propiedades-de-la-transformada-unilateral">Propiedades de la transformada unilateral</a></h2>
+<p><img src="z/img/propiedades-unilateral.png" alt="" /></p>
+<h2 id="algunas-transformadas-unilaterales-1"><a class="header" href="#algunas-transformadas-unilaterales-1">Algunas transformadas unilaterales</a></h2>
+<p><img src="z/img/tabla-unilateral.png" alt="" /></p>
+<h2 id="descomposición-de-la-respuesta"><a class="header" href="#descomposición-de-la-respuesta">Descomposición de la respuesta</a></h2>
+<p>Toda respuesta de cualquier sistema puede expresarse como la suma de dos
+componentes:</p>
+<ul>
+<li>
+<p>La <strong>respuesta natural</strong> \(y_{zi}(n)\), la cual ocurre cuando la
+entrada es nula (&quot;zero input&quot;).</p>
+</li>
+<li>
+<p>La <strong>respuesta forzada</strong> \(y_{zs}(n)\), la cual ocurre cuando las
+condiciones iniciales son nulas (&quot;zero state&quot;).</p>
+</li>
+</ul>
+<p>\[y(n) = y_{zi}(n) + y_{zs}(n)\]</p>
+<p>La respuesta natural siempre estará asociada a las condiciones iniciales, y la
+respuesta forzada siempre estará asociada a la entrada. Por ejemplo, la
+respuesta completa en dominio \(z\) de un sistema puede ser:</p>
+<p>\[Y(z) = {\frac{\frac{4}{5}y(-1) - \frac{1}{4}z^{-1}y(-2)}{1 - \frac{4}{5}z^{-1} + \frac{1}{4}z^{-2}}} + {\frac{1 - z^{-2}}{1 + \frac{1}{4}z^{-2}}X(z)} = Y_{zi}(n) + Y_{zs}(n) \]</p>
+<h2 id="diagramas-de-bloques"><a class="header" href="#diagramas-de-bloques">Diagramas de bloques</a></h2>
+<p>Un <strong>diagrama de bloques</strong> modela a un sistema gráficamente. En el caso de
+sistemas discretos, puede encontrarse una ecuación de diferencias a partir de
+su diagarama de bloques y viceversa.</p>
+<p><img src="z/img/retroalimentacion.png" alt="" /></p>
+<p>En este caso, podemos decir que:</p>
+<p>\[
+\begin{align*}
+Q(z) &amp;= \frac{Y(z)}{E(z)} \\
+E(z)Q(z) &amp;= Y(z) \\
+(X(z) - G(z)Y(z))Q(z) &amp;= Y(z) \\
+X(z)Q(z) &amp;= Y(z)(1 + G(z)Q(z)) \\
+\implies H(z) &amp;= \frac{Y(z)}{X(z)} = \frac{Q(z)}{1 + G(z)Q(z)}
+\end{align*}
+\]</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            MathJax.Hub.Register.StartupHook('End', function() {
+                window.setTimeout(window.print, 100);
+            });
+        });
+        </script>
+    </body>
+</html>

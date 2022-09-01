@@ -1,0 +1,297 @@
+<!DOCTYPE HTML>
+<html lang="es" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Conjuntos, estructuras y el plano complejo - Nivelación en Matemáticas para Ingeniería</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../intro/intro.html"><strong aria-hidden="true">1.</strong> Introducción</a></li><li class="chapter-item expanded "><a href="../analisis_complejo/intro.html"><strong aria-hidden="true">2.</strong> Análisis complejo</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../analisis_complejo/conjuntos.html" class="active"><strong aria-hidden="true">2.1.</strong> Conjuntos, estructuras y el plano complejo</a></li><li class="chapter-item expanded "><a href="../analisis_complejo/funciones.html"><strong aria-hidden="true">2.2.</strong> Funciones de variable compleja</a></li><li class="chapter-item expanded "><a href="../analisis_complejo/derivacion.html"><strong aria-hidden="true">2.3.</strong> Derivación compleja</a></li><li class="chapter-item expanded "><a href="../analisis_complejo/series.html"><strong aria-hidden="true">2.4.</strong> Series complejas</a></li><li class="chapter-item expanded "><a href="../analisis_complejo/puntos.html"><strong aria-hidden="true">2.5.</strong> Singularidades, polos y ceros</a></li><li class="chapter-item expanded "><a href="../analisis_complejo/integracion.html"><strong aria-hidden="true">2.6.</strong> Integración compleja</a></li></ol></li><li class="chapter-item expanded "><a href="../fourier/intro.html"><strong aria-hidden="true">3.</strong> Análisis de Fourier</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../fourier/ortogonalidad.html"><strong aria-hidden="true">3.1.</strong> Ortogonalidad</a></li><li class="chapter-item expanded "><a href="../fourier/series.html"><strong aria-hidden="true">3.2.</strong> Series de Fourier</a></li><li class="chapter-item expanded "><a href="../fourier/transformada.html"><strong aria-hidden="true">3.3.</strong> Transformada de Fourier</a></li><li class="chapter-item expanded "><a href="../fourier/lti.html"><strong aria-hidden="true">3.4.</strong> Sistemas LTI</a></li></ol></li><li class="chapter-item expanded "><a href="../laplace/intro.html"><strong aria-hidden="true">4.</strong> Transformada de Laplace</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../laplace/bilateral.html"><strong aria-hidden="true">4.1.</strong> Transformada bilateral de Laplace</a></li><li class="chapter-item expanded "><a href="../laplace/unilateral.html"><strong aria-hidden="true">4.2.</strong> Transformada unilateral de Laplace</a></li><li class="chapter-item expanded "><a href="../laplace/aplicaciones.html"><strong aria-hidden="true">4.3.</strong> Aplicación de las transformadas integrales</a></li></ol></li><li class="chapter-item expanded "><a href="../z/intro.html"><strong aria-hidden="true">5.</strong> Transformada z</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../z/funciones.html"><strong aria-hidden="true">5.1.</strong> Funciones en tiempo discreto</a></li><li class="chapter-item expanded "><a href="../z/sistemas.html"><strong aria-hidden="true">5.2.</strong> Sistemas en tiempo discreto</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Nivelación en Matemáticas para Ingeniería</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="conjuntos-estructuras-y-el-plano-complejo"><a class="header" href="#conjuntos-estructuras-y-el-plano-complejo">Conjuntos, estructuras y el plano complejo</a></h1>
+<p>Se necesitan algunos conceptos previos:</p>
+<ul>
+<li>
+<p>Conjunto: Difícil de definir formalmente sin crear paradojas, vamos a usar la
+noción intuitiva.
+<img src="img/venn.png" alt="" /></p>
+</li>
+<li>
+<p>Estructura algebraica: Un conjunto asociado a una operación sobre elementos
+de ese conjunto. Por ejemplo, los reales \(\mathbb{R}\) junto a la
+operación de negación \(-x\) conforman una estructura de operación unaria.</p>
+</li>
+<li>
+<p>Nos interesan las estructuras algebraicas con operaciones binarias.</p>
+</li>
+</ul>
+<p><img src="img/estructuras.png" alt="" />
+<img src="img/binaria.png" alt="" /></p>
+<h2 id="el-conjunto-mathbbc"><a class="header" href="#el-conjunto-mathbbc">El conjunto \(\mathbb{C}\)</a></h2>
+<p>Se define a través la unidad imaginaria \(j\) que cumple \(j^2 = -1\).
+\[z = a + jb = re^{j(\theta + 2k\pi)} = r\cos(\theta) + jr\sin(\theta); k \in \mathbb{Z}\]</p>
+<p>Podemos definir muchos constructos en el plano utilizando ecuaciones
+e inecuaciones en términos de la variable \(z = x + jy\).</p>
+<ul>
+<li>
+<p>Puntos: Decimos \(z_0 = 1 - j2\) para referirnos al punto cartesiano
+\((1, -2)\). A los ejes les llamamos eje real y eje imaginario.</p>
+</li>
+<li>
+<p>Distancias y corrimientos: La distancia entre dos puntos \(a\) y \(b\) es
+\(|a - b|\).</p>
+</li>
+<li>
+<p>Rectas paralelas a los ejes: En los reales esto corresponde a las
+ecuaciones \(x = c\) y \(y = c\), por lo que en los complejos
+decimos \(\mathrm{Re}\{z\} = c\) e \(\mathrm{Im}\{z\} = c\).</p>
+</li>
+<li>
+<p>Semirrectas: Como los números complejos pueden expresarse en
+forma de magnitud y ángulo, podemos construir &quot;rayos&quot; que provienen
+del origen con ecuaciones como \(\angle z = \theta\).</p>
+</li>
+<li>
+<p>Rectas: Todos los puntos de una recta cumplen estar a la misma distancia
+de tanto un punto \(a\) como un punto \(b\), por lo que es posible
+escribir una recta como \(|z - a| = |z - b|\).</p>
+</li>
+</ul>
+<p><img src="img/mediatriz.png" alt="" /></p>
+<ul>
+<li>Círculos: Sabemos que \(|z|^2 = x^2 + y^2 = r^2\), por lo que una
+circunferencia centrada en el origen está expresada por \(|z| = r\). Si
+&quot;desfasamos&quot; \(z\) es posible mover el origen. Por ejemplo, \(|z - (3 +
+j5)| \lt 2\) es el interior de un círculo centrado en \(z_0 = 3 + j5\) y
+con un radio de \(2\).</li>
+</ul>
+<p><img src="img/desigualdades.png" alt="" /></p>
+<h3 id="conjugación"><a class="header" href="#conjugación">Conjugación</a></h3>
+<p>Si \(z = a + jb = re^{j\theta}\), su conjugado es \(z^* = a - jb =
+re^{-j\theta}\).  En otras palabras, invierte el signo del ángulo, lo cual
+crea un &quot;espejo&quot; alrededor del eje real.</p>
+<p><img src="img/conjugado.png" alt="" /></p>
+<p>La conjugación tiene dos propiedades de cancelación:
+\[z + z^* = 2\mathrm{Re}\{z\}\]
+\[z - z^* = j2\mathrm{Im}\{z\}\]</p>
+<h3 id="multiplicación-y-división"><a class="header" href="#multiplicación-y-división">Multiplicación y división</a></h3>
+<p>Para multiplicar en forma rectangular, tenemos que:
+\[(a + jb)(c + jd) = (ac - bd) + j(ad + jbc)\]
+Pero es más fácil si lo hacemos en forma polar, ya que:
+\[r_1e^{j\theta_1}\cdot r_2e^{j\theta_2} = r_1r_2e^{j(\theta_1 + \theta_2)}\]
+Para dividir en forma rectangular es necesario utilizar el conjugado:
+\[\frac{a + jb}{c + jd} = \frac{a + jb}{c + jd}\cdot\frac{c - jd}{c - jd} = \frac{(a + jb)(c - jd)}{c^2 + d^2} = \frac{z_1z_2^*}{|z_2|^2}\]
+Esto nos muestra da una importante propiedad del conjugado:
+\[zz^* = |z|^2\]
+Dividir también es más fácil en forma polar:
+\[\frac{r_1e^{j\theta_1}}{r_2e^{j\theta_2}} = \frac{r_1}{r_2}e^{j(\theta_1 - \theta_2)}\]</p>
+<h3 id="raíces-complejas"><a class="header" href="#raíces-complejas">Raíces complejas</a></h3>
+<p>Sea \(z = re^{j(\theta + 2k\pi)}\), entonces \(w =
+\sqrt[n]{r}e^{\frac{j}{n}(\theta + 2k\pi)}\) es una raíz enésima de \(z\).
+La redundancia polar se vuelve importante aquí, ya que \(k\) evaluado desde
+\(0\) hasta \(n - 1\) produce \(n\) distintas raíces, acomodadas
+geométricamente por un cambio constante de rotación. Todos los complejos
+distintos de cero (incluyendo a los reales, que también son complejos) tienen
+exactamente \(n\) raíces enésimas distintas.</p>
+<p><img src="img/raices.png" alt="" /></p>
+<h3 id="potencias-y-logaritmos"><a class="header" href="#potencias-y-logaritmos">Potencias y logaritmos</a></h3>
+<p>El logaritmo complejo se puede deducir fácilmente a partir de la forma polar:
+\[\ln\left(re^{j(\theta + 2k\pi)}\right) = \ln(r) + \ln\left(e^{j(\theta + 2k\pi)}\right) = \ln(r) + j(\theta + 2k\pi)\]
+Así que en los complejos existen muchos logaritmos para un mismo número, no solo uno. Típicamente se habla del logaritmo principal (se identifica por la mayúscula),
+\[\mathrm{Ln}(z) = \ln_{k = 0}(z)\]
+Debido a argumentos parecidos tenemos que
+\[z^w = e^{\ln{z^w}} = e^{w\ln{z}}\]
+Por lo que la exponenciación también tiene una rama principal e infinitas adicionales por redundancia polar.</p>
+<h3 id="funciones-circulares"><a class="header" href="#funciones-circulares">Funciones circulares</a></h3>
+<p>Recordando la fórmula de Euler, \(e^{j\theta} = \cos(\theta) + j\sin(\theta)\),
+podemos extender las funciones seno y coseno a argumentos complejos:
+\[\cos(z) = \frac{e^{jz} + e^{-jz}}{2}\]
+\[\sin(z) = \frac{e^{jz} - e^{-jz}}{j2}\]
+En este mismo estilo, podemos definir nuevas funciones análogas, llamadas
+funciones hiperbólicas, como las partes par e impar de la función exponencial:
+\[\cosh(z) = \frac{e^{z} + e^{-z}}{2} = \cos(jz)\]
+\[\sinh(z) = \frac{e^{z} - e^{-z}}{2} = -j\sin(jz)\]</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../analisis_complejo/intro.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../analisis_complejo/funciones.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../analisis_complejo/intro.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../analisis_complejo/funciones.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>
