@@ -1,0 +1,15 @@
+[book]
+authors = ["Alejandro Soto"]
+language = "es"
+multilingual = false
+src = "src"
+title = "Nivelación en Matemáticas para Ingeniería"
+
+[output.html]
+mathjax-support = true
+
+[preprocessor.presentation-preprocessor]
+
+#[preprocessor.bib]
+#title = "Bibliografía"
+#bibliography = "references.bib"
